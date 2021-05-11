@@ -1,0 +1,42 @@
+
+
+
+
+
+Real time food ordering web application using Html,CSS NodeJs, Express and Mongo DB 
+    
+    Features: 
+    1. Login system
+    2. Registration 
+    3. User roles 
+    4. Search Bar for menu items
+    4. Shopping cart 
+    5. Realtime food status tracker 
+        - Using Real time web socket private connections
+    6. Payment system using stipe(If time allow)
+
+
+    Pages:
+    HOME 
+    CONTACT Us
+    MENU
+    REVIEW(CUSTOMER EXPERIENCE)
+    CART
+    Login
+
+
+
+
+     FEATURES might be included depending on time :
+     * delivery zone
+     * delivery Fee 
+     * Ordering method
+       - delivery 
+       - pickup
+       - table reservation
+    * Choose A time (pre order)
+    *Payment method
+    *Comment Section
+    * Responsive
+
+
