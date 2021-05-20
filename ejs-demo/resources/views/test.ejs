@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/style_login.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <h1 id="header-title" style="display: none;"> Sign In </h1>
+    <div class='container'>
+        <div class="form" id="addForm">
+
+            <form class="register-form" id='regForm' style="display: none;" method="POST">
+
+                <!--<legend>User Form</legend> -->
+                <input type="text" id="username" name="username" placeholder="username" size="30" maxlength="12"><br><br>
+                <input type="text" name=" email" placeholder=" email" size="30" maxlength="8"><br><br>
+                <input type="password" name=" password" placeholder=" password" size="30" maxlength="8"><br><br>
+                <input type="password" name=" password" placeholder=" Confirm password" size="30" maxlength="8"><br><br>
+                <button class="btn btn-secondary btn-block" id="button"> Click Here</button>
+                <p class="message" id="go-to-login">Already Registered? <a href="#"> Login </a></p>
+            </form>
+
+
+            <form class="login-form" id='logForm' style="display: block;">
+
+                <input type="text" id="username" name="username" placeholder="username" size="30" maxlength="12"><br><br>
+
+                <input type="password" name=" password" placeholder=" password" size="30" maxlength="8"><br><br>
+
+                <button class="btn btn-secondary btn-block" id="button"> login</button>
+                <div class="text-muted mb-2"></div>
+
+                <p class="message" id="message">Not registered? <a href="#"> Register </a></p>
+
+
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src='login.js'>
+    </script>-->
+    <script src='login.js'>
+    </script>
+</body>
+
+</html>

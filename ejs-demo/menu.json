@@ -1,0 +1,95 @@
+[{
+        "_id": {
+            "$oid": "60a2aed18c267c847d566660"
+        },
+        "name": "Spicy vegetable biriyani",
+        "image": "image1.jpg",
+        "price": "$9.99",
+        "size": "small"
+
+
+    }, {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566661"
+        },
+        "name": "spicy biriyani",
+        "image": "image2.jpg",
+        "price": "$12",
+        "size": "regular"
+
+
+    }, {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566662"
+        },
+        "name": "spicy biriyani",
+        "image": "image3.jpg",
+        "price": "$16.99",
+        "size": "large"
+
+
+    }, {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566663"
+        },
+        "name": "spicy biriyani",
+        "image": "image4.jpg",
+        "price": "$20",
+        "size": "x-large"
+
+
+    },
+    {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566664"
+        },
+        "name": "spicy biriyani",
+        "image": "image1.jpg",
+        "price": "$20",
+        "size": "x-large"
+
+
+    },
+    {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566665"
+        },
+        "name": "spicy biriyani",
+        "image": "image5.jpg",
+        "price": "$20",
+        "size": "x-large"
+
+
+    }, {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566666"
+        },
+        "name": "Spicy mutton biriyani",
+        "image": "image6.jpg",
+        "price": "$20",
+        "size": "x-large"
+
+
+    }, {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566667"
+        },
+        "name": "Spicy lamb biriyani",
+        "image": "image1.jpg",
+        "price": "$20",
+        "size": "x-large"
+
+
+    },
+    {
+        "_id": {
+            "$oid": "60a2aed18c267c847d566668"
+        },
+        "name": "Spicy chicken biriyani",
+        "image": "image8.jpg",
+        "price": "$20",
+        "size": "large"
+
+
+    }
+]

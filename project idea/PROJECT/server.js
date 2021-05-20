@@ -7,15 +7,15 @@ const expresslayout = require('express-ejs-layouts')
 
 app.use(expresslayout)
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3300
 
-
+//set up our public folder for static files
+app.use(express.static('./public'));
 //// view engine setup
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs');
 
-//set up our public folder for static files
-app.use(express.static('./public'));
+
 
 // add the ‘/’ route to render the views/app.ejs page
 app.get('/', (request, response) => {

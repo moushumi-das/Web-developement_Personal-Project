@@ -113,7 +113,7 @@
                         display: grid;
                         grid-template-columns: 1fr 1fr 1fr 1fr;
                         grid-gap: 70px;
-                        padding-top: 300px;
+                        padding-top: 200px;
                         margin-left: 40px;
                     }
                     

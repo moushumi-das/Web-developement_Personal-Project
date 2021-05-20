@@ -1,0 +1,226 @@
+body {
+    margin: 0px;
+    margin-left: 0px;
+    /* background-color: bisque;*/
+}
+
+
+/* styling nav bar */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.nav_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.right_side {
+    display: flex;
+}
+
+.nav_wrapper>.right_side>div {
+    margin-right: 20px;
+    font-size: 0.9em;
+}
+
+.nav_link_wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav_link_wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav_link_wrapper:hover {
+    border-bottom: 1px solid red
+}
+
+.nav_link_wrapper a:hover {
+    color: black
+}
+
+
+/* .......... styling middle section .......................... */
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(137, 223, 223);
+    height: 700px;
+}
+
+.right {
+    height: 50px;
+    width: 60%;
+}
+
+.left {
+    padding-left: 40px;
+    padding-top: 100px;
+}
+
+.text_style {
+    font-size: 20px;
+}
+
+.text_style2 {
+    font-weight: bold;
+    font-size: 65px;
+}
+
+
+/* ...............styling the CART .....................*/
+
+.inline_block {
+    background-color: transparent;
+    border-radius: 100%;
+    width: 100%;
+    height: 40px;
+}
+
+.inline_block a :hover {
+    transition: smooth;
+    background-color: sandybrown;
+}
+
+
+/* order button styling */
+
+.button {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    display: inline-block;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    width: 100px;
+}
+
+.button:hover {
+    background-color: #cecc5e;
+    /* Green */
+    color: rgb(231, 17, 17);
+    font-size: 18px;
+}
+
+
+/*  Menu item stylying */
+
+.menu_items_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 70px;
+    padding-top: 120px;
+    margin-left: 40px;
+}
+
+.menu_item_wrapper {
+    position: relative;
+}
+
+.menu_img_background {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img_text_wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    ;
+}
+
+.logo_wrapper img {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.img_text_wrapper .subtitle {
+    transition: 1s;
+    font-weight: 600;
+    color: transparent;
+}
+
+.img_text_wrapper:hover .subtitle {
+    font-weight: 600;
+    color: white;
+}
+
+.img-darken {
+    transition: 1s;
+    filter: brightness (50%);
+}
+
+.item_name {
+    font-size: 14px;
+    text-align: center;
+}
+
+.item_size {
+    background-color: lightgray;
+    border-radius: 7px;
+    display: inline-block;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 55px;
+    margin-left: 110px;
+}
+
+.button2 {
+    transition-duration: smooth;
+    border-radius: 4px;
+    display: inline-block;
+    background-color: rgb(221, 221, 240);
+    border: 2;
+    color: orangered;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px;
+    width: 60px;
+}
+
+.button2:hover {
+    background-color: rgb(231, 17, 17);
+    /* Green */
+    color: whitesmoke;
+    font-size: 12px;
+}
+
+.menu_add_section {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 6px;
+    height: 90%;
+}
+
+.item_price {
+    font-weight: bold;
+    font-size: 17px;
+    padding-top: 10px;
+}
