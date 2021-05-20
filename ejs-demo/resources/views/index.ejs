@@ -7,19 +7,62 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+
+<!--<div class="container"> -->
+
+<section class="middle-section">
+    <div class="container2">
+        <div class="left">
+            <h6 class="text_style"><em>Are you hungry?</em></h6>
+            <h1 class="text_style2">Don't wait !</h1>
+            <button class="button" id="button2"> Order Now</button>
+        </div>
+
+        <div class="right">
+            <img src="images/image3.jpg" alt="Food" height="700px" width="800px">
+        </div>
+    </div>
+</section>
+
+
+
+<div class="content_wrapper">
+
+    <div class="menu_items_wrapper">
+        <% items.forEach(function(item) {%>
+            <div class="menu_item_wrapper">
+
+                <img src="images/<%=item.image %>" width="300px" height="200px">
+                <div class="manu_item">
+                    <h2 class="item_name">
+                        <%= item.name %>
+                    </h2>
+                    <span class="item_size"> <%= item.size %></span>
+
+                    <div class="menu_add_section">
+                        <span class="item_price"> $250 </span>
+                        <button class="button2">
+                            <span>+</span> 
+                            <span> Add </span> 
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+            <% }) %>
+    </div>
+
+</div>
+
+
+
+
 <!--<body>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-   
-
-        <div> <a href="/about">ABOUT US</a></div>
-        <div> <a href="/404">Error page</a></div>
-        <div> <a href="/test">test page</a></div>
-        <div><a href="/test">test</a></div>
 
 
-    </div>
-   
 
 
 
