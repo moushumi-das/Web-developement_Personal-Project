@@ -80,15 +80,30 @@ body {
 /* ...............styling the CART .....................*/
 
 .inline_block {
-    background-color: transparent;
+    text-align: center;
     border-radius: 100%;
     width: 100%;
-    height: 40px;
 }
 
-.inline_block a :hover {
+.test_block {
+    display: flex;
+    background-color: thistle;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 75px;
+}
+
+.inline_block :hover {
     transition: smooth;
-    background-color: sandybrown;
+    background-color: lightsalmon;
+}
+
+.total-addtoCart-item {
+    padding-right: 5px;
+    color: black;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 
 

@@ -53,3 +53,9 @@ body {
 .form .register-form {
     display: none;
 }
+
+.warning {
+    color: rgb(228, 95, 95);
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}

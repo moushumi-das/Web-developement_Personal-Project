@@ -11,38 +11,28 @@
 
     <h1 id="header-title" style="display: none;"> Sign In </h1>
     <div class='container'>
+
         <div class="form" id="addForm">
 
-            <form class="register-form" id='regForm' style="display: none;" method="POST">
+            <form action='/login' class="login-form" id='logForm' style="display: block;" method="POST">
+                <% if(messages.error) { %>
+                    <span class=warning><%= messages.error %></span>
+                    <% } %>
+                        <input name='email' type="text" id="username1" placeholder="email" size="30" maxlength="32"><br><br>
 
-                <!--<legend>User Form</legend> -->
-                <input type="text" id="username" name="username" placeholder="username" size="30" maxlength="12"><br><br>
-                <input type="text" name=" email" placeholder=" email" size="30" maxlength="8"><br><br>
-                <input type="password" name=" password" placeholder=" password" size="30" maxlength="8"><br><br>
-                <input type="password" name=" password" placeholder=" Confirm password" size="30" maxlength="8"><br><br>
-                <button class="btn btn-secondary btn-block" id="button"> Click Here</button>
-                <p class="message" id="go-to-login">Already Registered? <a href="#"> Login </a></p>
-            </form>
+                        <input name='password' type="password" name=" password" placeholder=" password" size="30" maxlength="20"><br><br>
 
+                        <button class="btn btn-secondary btn-block" id="button2" type="submit"> login</button>
+                        <div class="text-muted mb-2"></div>
 
-            <form class="login-form" id='logForm' style="display: block;">
-
-                <input type="text" id="username" name="username" placeholder="username" size="30" maxlength="12"><br><br>
-
-                <input type="password" name=" password" placeholder=" password" size="30" maxlength="8"><br><br>
-
-                <button class="btn btn-secondary btn-block" id="button"> login</button>
-                <div class="text-muted mb-2"></div>
-
-                <p class="message" id="message">Not registered? <a href="#"> Register </a></p>
+                        <p class="message" id="message">Not registered? <a href="/register"> Register </a></p>
 
 
             </form>
         </div>
     </div>
 
-    <!-- <script src='login.js'>
-    </script>-->
+
     <script src='js/login.js'>
     </script>
 </body>

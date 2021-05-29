@@ -8,84 +8,70 @@
 
 <body>
     <section class="cart">
-
-        <!-- 
-        <div class="container_cart">
-            <h1 class="text">Cart Empty </h1>
-            <p class="text_2"> The cart is empty. you haven't order anything yet.</p>
-            <img class="empty_cart" src="empty_cart.jpg" alt="cf">
-
-            <a href="/" class="return_button">Go back</a>
-        </div>
-
-    -->
+        <% if(session.cart) { %>
 
 
-        <div class="order_container">
-            <div class="order_container_item">
-                <img class="image" src="images/shopping-cart.png" alt="">
-                <h1 class="text_font">Order summary</h1>
 
-            </div>
 
-            <div class="ordered-list">
-                <div class="ordered_item">
-                    <img class="image_ordered_item" src="images/image5.jpg" alt="" width="4%" height="1%">
-                    <div class="image_ordered_item2">
-                        <h1>Food</h1>
-                        <span>REGULAR</span>
+            <div class="order_container">
+                <div class="order_container_item">
+                    <img class="image" src="images/shopping-cart.png" alt="">
+                    <h1 class="text_font">Order summary</h1>
+
+                </div>
+
+                <div class="ordered-list">
+                    <% for(let orderedItem of Object.values(session.cart.items)) {%>
+                        <div class="ordered_item">
+                            <img class="image_ordered_item" src="images/<%= orderedItem.item.image %>" alt="" width="4%" height="1%">
+                            <div class="image_ordered_item2">
+                                <h1>
+                                    <%= orderedItem.item.name %>
+                                </h1>
+                                <span><%= orderedItem.item.size %></span>
+                            </div>
+                            <span class="ordereditem"><%= orderedItem.item.price * orderedItem.qty %> </span>
+                            <span class="ordereditem_price"></span>
+
+                        </div>
+                        <% } %>
+
+
+
+
+
+                </div>
+                <hr>
+                <div class="order-amount">
+                    <div>
+                        <span>Total Amount:</span>
+                        <span class="total-price"><%= session.cart.totalPrice %></span>
+
                     </div>
+                    <form class="form1" action="">
+                        <input class="" type="text" placeholder="phone number">
+                        <input class="" type="text" placeholder="Address">
+                        <div> <button class="button" type="submit"> Order Now</button></div>
 
-                    <span class="ordereditem">1 Pcs</span>
-                    <span class="ordereditem_price">$15</span>
-
-                </div>
-
-
-                <div class="ordered_item">
-                    <img class="image_ordered_item" src="images/image5.jpg" alt="" width="4%" height="1%">
-                    <div class="image_ordered_item2">
-                        <h1>Food</h1>
-                        <span>REGULAR</span>
-                    </div>
-
-                    <span class="ordereditem">1 Pcs</span>
-                    <span class="ordereditem_price">$15</span>
+                    </form>
 
                 </div>
-
-
-                <div class="ordered_item">
-                    <img class="image_ordered_item" src="images/image5.jpg" alt="" width="4%" height="1%">
-                    <div class="image_ordered_item2">
-                        <h1>Food</h1>
-                        <span>REGULAR</span>
-                    </div>
-
-                    <span class="ordereditem">1 Pcs</span>
-                    <span class="ordereditem_price">$15</span>
-
-                </div>
+                <!-- <a href="" class="button2">Login to continue</a>-->
             </div>
-            <hr>
-            <div class="order-amount">
-                <div>
-                    <span>Total Amount:</span>
-                    <span class="total-price">$90</span>
+            <%} else {%>
 
+                <div class="container_cart">
+                    <h1 class="text">Cart Empty </h1>
+                    <p class="text_2"> The cart is empty. you haven't order anything yet.</p>
+                    <img class="empty_cart" src="empty_cart.jpg" alt="cf">
+
+                    <a href="/" class="return_button">Go back</a>
                 </div>
-                <form class="form1" action="">
-                    <input class="" type="text" placeholder="phone number">
-                    <input class="" type="text" placeholder="Address">
-                    <div> <button class="button" type="submit"> Order Now</button></div>
 
-                </form>
 
-            </div>
-            <!-- <a href="" class="button2">Login to continue</a>-->
-        </div>
+                <% } %>
     </section>
-    <script></script>
+
 </body>
 
 </html>
