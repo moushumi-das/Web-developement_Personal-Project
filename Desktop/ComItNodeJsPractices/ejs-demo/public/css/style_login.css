@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0px;
+    font-family: sans-serif;
+    background-image: linear-gradient(to right, rgba(255, 170, 170, 0.4) 0 100%), url(/images/background_img.jpg);
+    background-size: cover;
+}
+
+.container {
+    width: 360px;
+    padding: 20px;
+    max-width: 360px;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: rgba(7, 40, 195, 0.9);
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+}
+
+.form input {
+    font-family: 'Roboto', sans-serif;
+    outline: 1;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: aliceblue;
+    font-size: 12px;
+}
+
+.form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.form .register-form {
+    display: none;
+}
+
+.form .register-form {
+    display: none;
+}
+
+.warning {
+    color: rgb(228, 95, 95);
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}

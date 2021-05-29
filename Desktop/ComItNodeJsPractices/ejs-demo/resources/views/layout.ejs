@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="nav_wrapper">
+            <div class="left_side">
+                <div class="brand">
+                    <div> BIRIYANI HOUSE</div>
+                </div>
+            </div>
+
+            <div class="right_side">
+                <div class="nav_link_wrapper">
+                    <a href="/"> HOME </a>
+                </div>
+
+                <div class="nav_link_wrapper">
+                    <a href="/about">ABOUT US</a>
+
+                </div>
+                <div class="nav_link_wrapper">
+                    <a href="/404">MENU</a>
+                </div>
+
+                <% if (user) { %>
+                    <div class="nav_link_wrapper">
+                        <form id='logout' action="/logout" method="POST">
+                            <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                        </form>
+
+                    </div>
+                    <% } else { %>
+                        <div class="nav_link_wrapper">
+                            <a href="/login">SIGN IN</a>
+                        </div>
+                        <% } %>
+                            <div class="nav_link_wrapper">
+                                <div class="inline_block">
+                                    <a href="/cart" class="test_block">
+                                        <span id="cartCouter" class="total-addtoCart-item"><%= session.cart ? session.cart.totalQty: '' %></span>
+                                        <img src="images/cart.png" alt="cart" width="45" height="35"></a>
+                                </div>
+
+                            </div>
+            </div>
+
+        </div>
+        <%- body %>
+</body>
+
+</html>
