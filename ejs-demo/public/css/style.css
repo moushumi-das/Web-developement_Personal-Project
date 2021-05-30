@@ -39,6 +39,13 @@ body {
     transition: color 0.5s;
 }
 
+form {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+    text-transform: uppercase;
+}
+
 .nav_link_wrapper:hover {
     border-bottom: 1px solid red
 }

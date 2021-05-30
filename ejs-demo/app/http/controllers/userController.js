@@ -17,7 +17,15 @@ function userController() {
         },
 
         postLogin(req, res, next) {
+            const { email, password } = req.body
+            console.log(req.body)
 
+            // request validation
+            if (!email || !password) {
+                // if any field is empty then show the error message
+                req.flash('error', 'All fields need to be filled')
+                return res.redirect('/login')
+            }
             passport.authenticate('local', (err, user, info) => {
                 if (err) {
                     req.flash('error', info.message)
