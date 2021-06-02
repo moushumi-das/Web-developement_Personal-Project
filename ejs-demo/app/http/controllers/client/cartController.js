@@ -15,7 +15,7 @@ function cartController() {
 
 
                 //Check if item does not exist in cart
-                //
+
             }
             let cart = req.session.cart
             console.log(req.body)

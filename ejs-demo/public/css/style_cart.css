@@ -1,161 +1,165 @@
-                                                                                body {
-                                                                                    margin: 0;
-                                                                                }
-                                                                                
-                                                                                .cart {
-                                                                                    margin-top: 20px;
-                                                                                    margin-bottom: 20px;
-                                                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
-                                                                                }
-                                                                                /*..............................Styling empty cart ....................*/
-                                                                                
-                                                                                .container_cart {
-                                                                                    text-align: center;
-                                                                                    font-size: 30px;
-                                                                                    margin: 90px;
-                                                                                }
-                                                                                
-                                                                                .return_button {
-                                                                                    display: inline-block;
-                                                                                    background-color: tomato;
-                                                                                    color: whitesmoke;
-                                                                                    border-radius: 5px;
-                                                                                    padding: 5px;
-                                                                                }
-                                                                                
-                                                                                .empty_cart {
-                                                                                    width: 500px;
-                                                                                    height: 400px;
-                                                                                    margin-left: auto;
-                                                                                    margin-right: auto
-                                                                                }
-                                                                                
-                                                                                .text_2 {
-                                                                                    color: gray
-                                                                                }
-                                                                                
-                                                                                .image {
-                                                                                    width: 100px;
-                                                                                    height: 100px;
-                                                                                    height: 8%;
-                                                                                    width: 8%;
-                                                                                }
-                                                                                /*..............................Styling Cart with ordered items ....................*/
-                                                                                
-                                                                                .order_container {
-                                                                                    margin: auto;
-                                                                                    text-align: center;
-                                                                                    background-color: lightyellow;
-                                                                                }
-                                                                                
-                                                                                .order_container_item {
-                                                                                    display: flex;
-                                                                                    padding-left: 400px;
-                                                                                    background-color: bisque;
-                                                                                    border-bottom: 3px solid #acafa7;
-                                                                                }
-                                                                                
-                                                                                .text_font {
-                                                                                    font-weight: bold;
-                                                                                    padding-inline-start: 10px;
-                                                                                }
-                                                                                /*..............................Styling ordered Items ....................*/
-                                                                                
-                                                                                .ordered_item {
-                                                                                    display: flex;
-                                                                                    align-items: center;
-                                                                                    margin-top: 40px;
-                                                                                }
-                                                                                
-                                                                                .ordered_item img {
-                                                                                    padding-left: 350px;
-                                                                                }
-                                                                                
-                                                                                .image_ordered_item2 {
-                                                                                    padding-left: 30px;
-                                                                                }
-                                                                                
-                                                                                .image_ordered_item2 span {
-                                                                                    font-size: small;
-                                                                                }
-                                                                                
-                                                                                .ordereditem {
-                                                                                    display: flex;
-                                                                                    flex-grow: 1;
-                                                                                    padding-left: 200px;
-                                                                                }
-                                                                                
-                                                                                .ordereditem_price {
-                                                                                    padding-right: 380px;
-                                                                                }
-                                                                                /*..............................Styling total amount for ordered Items ....................*/
-                                                                                
-                                                                                .order-amount {
-                                                                                    text-align: right;
-                                                                                    padding-right: 50px;
-                                                                                }
-                                                                                
-                                                                                .total-price {
-                                                                                    font-weight: bold;
-                                                                                    font-size: x-large;
-                                                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
-                                                                                    color: orangered;
-                                                                                }
-                                                                                /*..............................Styling Input element ....................*/
-                                                                                
-                                                                                .form1 {
-                                                                                    padding-top: 10px;
-                                                                                }
-                                                                                
-                                                                                input[type=text],
-                                                                                select {
-                                                                                    width: 18%;
-                                                                                    padding: 6px 12px;
-                                                                                    margin: 8px 0;
-                                                                                    border: 1px solid #ccc;
-                                                                                    border-radius: 4px;
-                                                                                    box-sizing: border-box;
-                                                                                }
-                                                                                /*..............................Styling "order now" button in cart page....................*/
-                                                                                
-                                                                                .button {
-                                                                                    transition-duration: 0.4s;
-                                                                                    border-radius: 4px;
-                                                                                    display: inline-block;
-                                                                                    background-color: #f4511e;
-                                                                                    border: none;
-                                                                                    color: #FFFFFF;
-                                                                                    text-align: center;
-                                                                                    font-size: 15px;
-                                                                                    padding: 5px;
-                                                                                    width: 100px;
-                                                                                }
-                                                                                
-                                                                                .button:hover {
-                                                                                    background-color: linen;
-                                                                                    border: 2px solid orangered;
-                                                                                    color: rgb(231, 17, 17);
-                                                                                    font-size: 14px;
-                                                                                    font-weight: bold;
-                                                                                }
-                                                                                
-                                                                                .button2 {
-                                                                                    transition-duration: 0.4s;
-                                                                                    border-radius: 4px;
-                                                                                    display: inline-block;
-                                                                                    background-color: #f4511e;
-                                                                                    border: none;
-                                                                                    color: #FFFFFF;
-                                                                                    text-align: center;
-                                                                                    font-size: 15px;
-                                                                                    padding: 5px;
-                                                                                    width: 100px;
-                                                                                }
-                                                                                
-                                                                                .button2:hover {
-                                                                                    background-color: linen;
-                                                                                    border: 2px solid orangered;
-                                                                                    color: rgb(231, 17, 17);
-                                                                                    font-size: 14px;
-                                                                                    font-weight: bold;
-                                                                                }
+                                                body {
+                                                    margin: 0;
+                                                }
+                                                
+                                                .cart {
+                                                    margin-top: 20px;
+                                                    margin-bottom: 20px;
+                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                                }
+                                                /*..............................Styling empty cart ....................*/
+                                                
+                                                .container_cart {
+                                                    text-align: center;
+                                                    font-size: 30px;
+                                                    margin: 90px;
+                                                }
+                                                
+                                                .return_button {
+                                                    display: inline-block;
+                                                    background-color: tomato;
+                                                    color: whitesmoke;
+                                                    border-radius: 5px;
+                                                    padding: 5px;
+                                                }
+                                                
+                                                .empty_cart {
+                                                    width: 500px;
+                                                    height: 400px;
+                                                    margin-left: auto;
+                                                    margin-right: auto
+                                                }
+                                                
+                                                .text_2 {
+                                                    color: gray
+                                                }
+                                                
+                                                .image {
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    height: 8%;
+                                                    width: 8%;
+                                                }
+                                                /*..............................Styling Cart with ordered items ....................*/
+                                                
+                                                .order_container {
+                                                    margin: auto;
+                                                    text-align: center;
+                                                    background-color: lightyellow;
+                                                }
+                                                
+                                                .order_container_item {
+                                                    display: flex;
+                                                    padding-left: 400px;
+                                                    background-color: bisque;
+                                                    border-bottom: 3px solid #acafa7;
+                                                }
+                                                
+                                                .text_font {
+                                                    font-weight: bold;
+                                                    padding-inline-start: 10px;
+                                                }
+                                                /*..............................Styling ordered Items ....................*/
+                                                
+                                                .ordered_item {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    margin-top: 40px;
+                                                }
+                                                
+                                                .ordered_item img {
+                                                    padding-left: 350px;
+                                                }
+                                                
+                                                .image_ordered_item2 {
+                                                    padding-left: 30px;
+                                                }
+                                                
+                                                .image_ordered_item2 span {
+                                                    font-size: small;
+                                                }
+                                                
+                                                .ordereditem {
+                                                    display: flex;
+                                                    flex-grow: 1;
+                                                    padding-left: 280px;
+                                                }
+                                                
+                                                .ordereditem_price {
+                                                    display: flex;
+                                                    flex-grow: 1;
+                                                    padding-right: 280px;
+                                                    padding-left: 280px;
+                                                }
+                                                /*..............................Styling total amount for ordered Items ....................*/
+                                                
+                                                .order-amount {
+                                                    text-align: right;
+                                                    padding-right: 320px;
+                                                }
+                                                
+                                                .total-price {
+                                                    font-weight: bold;
+                                                    font-size: large;
+                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                                    color: orangered;
+                                                }
+                                                /*..............................Styling Input element ....................*/
+                                                
+                                                .form1 {
+                                                    padding-top: 10px;
+                                                }
+                                                
+                                                input[type=text],
+                                                select {
+                                                    width: 18%;
+                                                    padding: 6px 12px;
+                                                    margin: 8px 0;
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 4px;
+                                                    box-sizing: border-box;
+                                                }
+                                                /*..............................Styling "order now" button in cart page....................*/
+                                                
+                                                .button {
+                                                    transition-duration: 0.4s;
+                                                    border-radius: 4px;
+                                                    display: inline-block;
+                                                    background-color: #f4511e;
+                                                    border: none;
+                                                    color: #FFFFFF;
+                                                    text-align: center;
+                                                    font-size: 15px;
+                                                    padding: 5px;
+                                                    width: 100px;
+                                                }
+                                                
+                                                .button:hover {
+                                                    background-color: linen;
+                                                    border: 2px solid orangered;
+                                                    color: rgb(231, 17, 17);
+                                                    font-size: 14px;
+                                                    font-weight: bold;
+                                                }
+                                                
+                                                .button2 {
+                                                    margin-top: 10px;
+                                                    transition-duration: 0.4s;
+                                                    border-radius: 4px;
+                                                    display: inline-block;
+                                                    background-color: #f4511e;
+                                                    border: none;
+                                                    color: #FFFFFF;
+                                                    text-align: center;
+                                                    font-size: 15px;
+                                                    padding: 8px;
+                                                    width: 150px;
+                                                }
+                                                
+                                                .button2:hover {
+                                                    background-color: linen;
+                                                    border: 2px solid orangered;
+                                                    color: rgb(231, 17, 17);
+                                                    font-size: 14px;
+                                                    font-weight: bold;
+                                                }

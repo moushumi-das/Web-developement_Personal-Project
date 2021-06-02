@@ -28,13 +28,15 @@ connection.once('open', () => {
 //Session will be stored in mongodb database
 let mongoStore = new MongoStore({
     mongooseConnection: connection,
+    // the cart session will be stored in the database collection named ''sessions''
     collection: 'sessions'
 })
 
 
-// Session middleware configuration
+// Session middleware configuration. We will store cart inside session
 // maxAge unit in ms so 24hr =  1000*60*60*24
 app.use(session({
+    // process env  allow us to access our .env file
     secret: process.env.COOKIE_SECRET,
     resave: false,
     store: mongoStore,

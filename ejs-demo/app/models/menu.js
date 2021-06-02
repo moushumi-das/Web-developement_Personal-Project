@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-//schema 
+//Creating a schema for feching menu to database
 const menuSchema = new Schema({
     name: { type: String, required: true },
     image: { type: String, required: true },

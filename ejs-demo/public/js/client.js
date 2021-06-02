@@ -2106,18 +2106,26 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+ //const axios = require('axios');
+//import Noty from 'noty'
+//'button2' class is added for 'Add' button which is used to add item in the cart
 
 var addToCart = document.querySelectorAll('.button2');
+var cartCouter = document.querySelector('#cartCouter');
 
 function updateCart(item) {
   axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', item).then(function (res) {
-    console.log(res);
+    console.log(res.data.totalQty);
+    cartCouter.innerText = res.data.totalQty;
+    /*new Noty({
+        text: "Item added to cart"
+    }).show();*/
   });
 }
 
 addToCart.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
-    console.log(e);
+    // JSON. parse convert json string to object
     var item = JSON.parse(btn.dataset.item);
     updateCart(item);
   });
