@@ -1,5 +1,5 @@
 import axios from 'axios'
-//const axios = require('axios');
+import { initAdmin } from './admin'
 //import Noty from 'noty'
 
 //'button2' class is added for 'Add' button which is used to add item in the cart
@@ -10,9 +10,7 @@ function updateCart(item) {
     axios.post('/update-cart', item).then(res => {
         console.log(res.data.totalQty)
         cartCouter.innerText = res.data.totalQty
-            /*new Noty({
-                text: "Item added to cart"
-            }).show();*/
+
     })
 }
 
@@ -24,3 +22,5 @@ addToCart.forEach((btn) => {
         updateCart(item)
     })
 })
+
+initAdmin()

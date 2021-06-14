@@ -45,9 +45,9 @@
                     <!-- If user is loged in then allow them to complete the order-->
                     <% if(user) { %>
                         <div>
-                            <form class="form1" action="">
-                                <input class="" type="text" placeholder="phone number">
-                                <input class="" type="text" placeholder="Address">
+                            <form class="form1" action="/order" method="POST">
+                                <input name='phone' class="" type="text" placeholder="phone number">
+                                <input name='address' class="" type="text" placeholder="Address">
                                 <div>
                                     <button class="button" type="submit"> Order Now</button>
                                 </div>

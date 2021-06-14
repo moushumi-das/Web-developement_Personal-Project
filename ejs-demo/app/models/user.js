@@ -10,5 +10,5 @@ const userSchema = new Schema({
 
 }, { timestamps: true })
 
-// foods is our collection name that's why we pass food(singular form of foods)in this function
+// users is our collection name 
 module.exports = mongoose.model('User', userSchema)

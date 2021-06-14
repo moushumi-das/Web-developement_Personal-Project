@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    background: bisque;
+}
+
+table {
+    margin-left: 30px;
+    padding: 15px;
+}
+
+table,
+th,
+td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    height: 30px;
+}
+
+table tr td:nth-child(1) {
+    width: 280px;
+}
+
+table tr td:nth-child(2) {
+    width: 200px;
+}
+
+table tr td:nth-child(3) {
+    width: 200px;
+}
+
+table tr td:nth-child(4) {
+    width: 150px;
+}

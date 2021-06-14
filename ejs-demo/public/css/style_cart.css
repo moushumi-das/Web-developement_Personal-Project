@@ -82,20 +82,14 @@
                                                 .ordereditem {
                                                     display: flex;
                                                     flex-grow: 1;
-                                                    padding-left: 280px;
-                                                }
-                                                
-                                                .ordereditem_price {
-                                                    display: flex;
-                                                    flex-grow: 1;
+                                                    padding-left: 380px;
                                                     padding-right: 280px;
-                                                    padding-left: 280px;
                                                 }
                                                 /*..............................Styling total amount for ordered Items ....................*/
                                                 
                                                 .order-amount {
                                                     text-align: right;
-                                                    padding-right: 320px;
+                                                    padding-right: 400px;
                                                 }
                                                 
                                                 .total-price {

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style_orders.css">
+</head>
+
+<body>
+
+
+    <section class='activeOrdersList'>
+        <div class='activeOrders'>
+
+            <table class='customersOrder'>
+                <thead>
+                    <tr>
+                        <th class="CS_Orders">Orders</th>
+                        <th class="CS_phone">Phone number</th>
+                        <th class="CS_Address">Address</th>
+                        <th class="CS_Time">Time</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- 'orders' is coming from OrderCrontroller
+                    <% if (orders.length) {%>
+                        <% orders.forEach(function(order) {%>
+                            <tr>
+                                <td class=CS_OrderList>
+                                    <a href="/">
+                                        <%= order._id %>
+                                    </a>
+                                </td>
+                                <td class=CS_OrderList>
+                                    <%= order.phone %>
+                                </td>
+                                <td class=CS_OrderList>
+                                    <%= order.address %>
+                                </td>
+                                <td class=CS_OrderList>
+                                    <!-- moment library is used to format the time string-->
+                    <!-- <%= moment(order.createdAt).format('hh:mm: A') %>
+                                </td>
+                            </tr>
+                            <% }) %>
+
+
+                                <% } else { %>
+                                    <td class=CS_OrderList> No active orders </td>
+                                    <% } %>
+                               -->
+                </tbody>
+
+            </table id="OrderTableBody">
+        </div>
+
+    </section>
+
+</body>
+
+</html>
