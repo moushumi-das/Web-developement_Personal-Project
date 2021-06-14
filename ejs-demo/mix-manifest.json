@@ -1,3 +1,4 @@
 {
-    "/public/js/client.js": "/public/js/client.js"
+    "/public/js/client.js": "/public/js/client.js",
+    "/public/js/admin.js": "/public/js/admin.js"
 }

@@ -1,4 +1,5 @@
 import axios from 'axios'
+//const initAdmin = require('./admin')
 import { initAdmin } from './admin'
 //import Noty from 'noty'
 

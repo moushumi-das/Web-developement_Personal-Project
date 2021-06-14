@@ -1,27 +1,28 @@
 body {
     margin: 0;
-    background: bisque;
+    background: cornsilk;
 }
 
 table {
-    margin-left: 30px;
-    padding: 15px;
+    margin-left: 70px;
+    border-collapse: collapse;
 }
 
 table,
 th,
 td {
     border: 1px solid gray;
-    border-collapse: collapse;
     text-align: center;
+    margin-left: 70px;
 }
 
 td {
-    height: 30px;
+    background-color: white;
+    border-collapse: collapse;
 }
 
 table tr td:nth-child(1) {
-    width: 280px;
+    width: 380px;
 }
 
 table tr td:nth-child(2) {
@@ -33,5 +34,36 @@ table tr td:nth-child(3) {
 }
 
 table tr td:nth-child(4) {
-    width: 150px;
+    width: 250px;
+}
+
+table tr td:nth-child(5) {
+    width: 350px;
+}
+
+th {
+    height: 50px;
+    background-color: lightgrey;
+}
+
+table td:hover {
+    background-color: rgb(176, 240, 226);
+    color: black;
+}
+
+.customersOrder {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid rgb(223, 222, 222);
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 210px;
+    width: 1200px;
+    height: 900px;
+    color: black;
+    /*//pointer-events: none;
+     position: absolute;
+         padding: 15px;
+
+    */
 }

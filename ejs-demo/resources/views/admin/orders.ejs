@@ -10,57 +10,130 @@
 </head>
 
 <body>
-
-
     <section class='activeOrdersList'>
+
         <div class='activeOrders'>
 
             <table class='customersOrder'>
                 <thead>
                     <tr>
-                        <th class="CS_Orders">Orders</th>
-                        <th class="CS_phone">Phone number</th>
+                        <th class="ALL_Orders">Orders</th>
+                        <th class="CS">Customer</th>
                         <th class="CS_Address">Address</th>
-                        <th class="CS_Time">Time</th>
+                        <th class="Order_status">Status</th>
+                        <th class=" Time">Time</th>
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
 
-                    <!-- 'orders' is coming from OrderCrontroller
-                    <% if (orders.length) {%>
-                        <% orders.forEach(function(order) {%>
-                            <tr>
-                                <td class=CS_OrderList>
-                                    <a href="/">
-                                        <%= order._id %>
-                                    </a>
-                                </td>
-                                <td class=CS_OrderList>
-                                    <%= order.phone %>
-                                </td>
-                                <td class=CS_OrderList>
-                                    <%= order.address %>
-                                </td>
-                                <td class=CS_OrderList>
-                                    <!-- moment library is used to format the time string-->
-                    <!-- <%= moment(order.createdAt).format('hh:mm: A') %>
-                                </td>
-                            </tr>
-                            <% }) %>
-
-
-                                <% } else { %>
-                                    <td class=CS_OrderList> No active orders </td>
-                                    <% } %>
-                               -->
                 </tbody>
 
-            </table id="OrderTableBody">
+            </table>
         </div>
-
     </section>
 
 </body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/moment"></script>
+
+<script src='../../js/admin.js'>
+</script>
+<script>
+    var tbody = document.querySelector('#tbody');
+    tbody.innerHTML = "I love programming";
+
+
+
+    axios.get('/admin/orders', {
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        })
+        .then(function(response) {
+
+            // Fetching data from database
+            orders = response.data
+
+            function generateMarkup(orders) {
+                return orders.map(order => {
+                    return `
+                              <tr>
+                              <td class="bord">
+                                  <p>${ order._id }</p>
+                                  <div>${ renderItems(order.items) }</div>
+                              </td>
+                              <td class="name_column">${ order.userId.username }</td>
+                              <td class="address_column">${ order.address }</td>
+                              </td>
+                              <td >
+                    <div class="statusForm">
+                        <form action="/admin/order/status" method="POST">
+                            <input type="hidden" name="orderId" value="${ order._id }">
+                            <select name="orderStatus" onchange="this.form.submit()"
+                                class="statusSelector">
+                                <option value="order_placed"
+                                    ${ order.status === 'order_placed' ? 'selected' : '' }>
+                                    Placed</option>
+                                <option value="confirmed" ${ order.status === 'confirmed' ? 'selected' : '' }>
+                                    Confirmed</option>
+                                <option value="prepared" ${ order.status === 'prepared' ? 'selected' : '' }>
+                                    Prepared</option>
+                                <option value="delivered" ${ order.status === 'delivered' ? 'selected' : '' }>
+                                    Delivered
+                                </option>
+                                <option value="completed" ${ order.status === 'completed' ? 'selected' : '' }>
+                                    Completed
+                                </option> 
+                            </select>
+                        </form>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 86 56" fill-opacity="1">
+                                <path
+                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </td>
+                <td class="border px-4 py-2">
+                    ${ moment(order.createdAt).format('hh:mm A') }
+                </td>
+                              
+                          </tr>
+                      `
+                })
+
+                function renderItems(items) {
+                    let parsedItems = Object.values(items)
+                    console.log(parsedItems)
+                    return parsedItems.map((orderedItem) => {
+                        console.log(orderedItem.item.name)
+
+                        return `
+                              <p>${ orderedItem.item.name } - ${ orderedItem.qty } pcs </p>
+                          `
+                    }).join('')
+                }
+            }
+            markup = generateMarkup(orders)
+            console.log(markup)
+                //console.log(response.data);
+            tbody.innerHTML = markup
+                //tbody.innerHTML = response.data[0].address + "   " + response.data[0].phone + " " + " " + response.data[0].userId.username
+
+        })
+        .catch(function(error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function() {
+            // always executed
+        });
+    //const orders = res.data
+</script>
+
 
 </html>

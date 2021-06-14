@@ -23,7 +23,7 @@ function orderController() {
                 req.flash('success', 'Order placed successfully')
 
                 delete req.session.cart // empty the cart
-                return res.redirect('/customer/order')
+                return res.redirect('/client/order')
 
             }).catch(err => {
                 req.flash('error', 'Something went wrong')

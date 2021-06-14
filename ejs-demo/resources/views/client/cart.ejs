@@ -28,7 +28,7 @@
                                 <span><%= orderedItem.item.size %></span><br>
                                 <span><%= orderedItem.qty %></span>
                             </div>
-                            <span class="ordereditem">$<%= orderedItem.item.price * orderedItem.qty %> </span>
+                            <span class="ordereditem">$<%= orderedItem.item.price.toFixed(2) * orderedItem.qty %> </span>
                             <span class="ordereditem_price"></span>
 
                         </div>
@@ -39,7 +39,7 @@
                 <div class="order-amount">
                     <div>
                         <span>Total Amount:</span>
-                        <span class="total-price">$<%= session.cart.totalPrice %></span>
+                        <span class="total-price">$<%= session.cart.totalPrice.toFixed(2) %></span>
 
                     </div>
                     <!-- If user is loged in then allow them to complete the order-->

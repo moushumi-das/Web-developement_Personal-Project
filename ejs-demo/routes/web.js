@@ -4,7 +4,8 @@ const cartController = require('../app/http/controllers/client/cartController')
 const guest = require('../app/http/middlewares/guest')
 const auth = require('../app/http/middlewares/Auth')
 const orderController = require('../app/http/controllers/client/orderController')
-const AdminOrderController = require('../app/http/controllers/admin/AdminOrderController')
+const ordersController = require('../app/http/controllers/admin/ordersController')
+const statusController = require('../app/http/controllers/admin/statusController')
 
 function initRoutes(app) {
     // Home page
@@ -13,7 +14,7 @@ function initRoutes(app) {
 
     // login page
     app.get('/login', guest, userController().login);
-    app.post('/login', userController().postLogin);
+    app.post('/login', userController().postLogin)
 
     // Register Page
     app.get('/register', guest, userController().register);
@@ -31,8 +32,10 @@ function initRoutes(app) {
     app.post('/order', orderController().store);
 
     // 'auth' is a middleware is created to make sure only signed-in customers can access '/customer/order' page
-    app.get('/customer/order', orderController().index);
-    app.get('/admin/orders', AdminOrderController().index);
+    app.get('/client/order', orderController().index);
+    app.get('/admin/orders', ordersController().index);
+    app.post('/admin/order/status', statusController().statusUpdate);
+
     app.get('/about', (req, res) => {
         res.render('about');
     });

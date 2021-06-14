@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const expressLayout = require('express-ejs-layouts');
+//const PORT = process.env.PORT;
 const PORT = process.env.PORT || 3000;
+
 
 const mongoose = require('mongoose');
 const session = require('express-session');

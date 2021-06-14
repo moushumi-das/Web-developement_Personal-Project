@@ -1834,60 +1834,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/admin.js":
-/*!*******************************!*\
-  !*** ./resources/js/admin.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "initAdmin": () => (/* binding */ initAdmin)
-/* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-
-
-function initAdmin() {
-  var tbody = document.querySelector('#tbody');
-  console.log(tbody);
-  var orders = [];
-  var markup;
-  axios__WEBPACK_IMPORTED_MODULE_0___default().get('/admin/orders', {
-    headers: {
-      "X-Requested-With": "XMLHttpRequest"
-    }
-  }).then(function (res) {
-    orders = res.data;
-    console.log(orders);
-    markup = generateMarkup(orders);
-    console.log(markup);
-    tbody.innerHTML = "Hi Its working now"; //orderTableBody.innerHtml = markup
-  })["catch"](function (err) {
-    console.log(err);
-  });
-
-  function renderItems(items) {
-    var parsedItems = Object.values(items);
-    console.log(parsedItems);
-    return parsedItems.map(function (orderedItem) {
-      console.log(orderedItem.item.name);
-      return "\n                <p>".concat(orderedItem.item.name, " - ").concat(orderedItem.qty, " pcs </p>\n            ");
-    }).join('');
-  }
-
-  function generateMarkup(orders) {
-    return orders.map(function (order) {
-      return "\n                <tr>\n                <td class=\"border px-4 py-2 text-green-900\">\n                    <p>".concat(order._id, "</p>\n                    <div>").concat(renderItems(order.items), "</div>\n                </td>\n                <td class=\"name_column\">").concat(order.userId.name, "</td>\n                <td class=\"address_column\">").concat(order.address, "</td>\n                </td>\n                <td class=\"border px-4 py-2\">\n                    ").concat(moment__WEBPACK_IMPORTED_MODULE_1___default()(order.createdAt).format('hh:mm A'), "\n                </td>\n            </tr>\n        ");
-    }).join('');
-  }
-}
-
-/***/ }),
-
 /***/ "./node_modules/moment/locale/af.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/af.js ***!
@@ -23600,36 +23546,53 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!********************************!*\
-  !*** ./resources/js/client.js ***!
-  \********************************/
+/*!*******************************!*\
+  !*** ./resources/js/admin.js ***!
+  \*******************************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initAdmin": () => (/* binding */ initAdmin)
+/* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
- //const initAdmin = require('./admin')
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 
- //import Noty from 'noty'
-//'button2' class is added for 'Add' button which is used to add item in the cart
 
-var addToCart = document.querySelectorAll('.button2');
-var cartCouter = document.querySelector('#cartCouter');
-
-function updateCart(item) {
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', item).then(function (res) {
-    console.log(res.data.totalQty);
-    cartCouter.innerText = res.data.totalQty;
+function initAdmin() {
+  var tbody = document.querySelector('#tbody');
+  console.log(tbody);
+  var orders = [];
+  var markup;
+  axios__WEBPACK_IMPORTED_MODULE_0___default().get('/admin/orders', {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  }).then(function (res) {
+    orders = res.data;
+    console.log(orders);
+    markup = generateMarkup(orders);
+    console.log(markup);
+    tbody.innerHTML = "Hi Its working now"; //orderTableBody.innerHtml = markup
+  })["catch"](function (err) {
+    console.log(err);
   });
+
+  function renderItems(items) {
+    var parsedItems = Object.values(items);
+    console.log(parsedItems);
+    return parsedItems.map(function (orderedItem) {
+      console.log(orderedItem.item.name);
+      return "\n                <p>".concat(orderedItem.item.name, " - ").concat(orderedItem.qty, " pcs </p>\n            ");
+    }).join('');
+  }
+
+  function generateMarkup(orders) {
+    return orders.map(function (order) {
+      return "\n                <tr>\n                <td class=\"border px-4 py-2 text-green-900\">\n                    <p>".concat(order._id, "</p>\n                    <div>").concat(renderItems(order.items), "</div>\n                </td>\n                <td class=\"name_column\">").concat(order.userId.name, "</td>\n                <td class=\"address_column\">").concat(order.address, "</td>\n                </td>\n                <td class=\"border px-4 py-2\">\n                    ").concat(moment__WEBPACK_IMPORTED_MODULE_1___default()(order.createdAt).format('hh:mm A'), "\n                </td>\n            </tr>\n        ");
+    }).join('');
+  }
 }
-
-addToCart.forEach(function (btn) {
-  btn.addEventListener('click', function (e) {
-    // JSON. parse convert json string to object
-    var item = JSON.parse(btn.dataset.item);
-    updateCart(item);
-  });
-});
-(0,_admin__WEBPACK_IMPORTED_MODULE_1__.initAdmin)();
 })();
 
 /******/ })()
