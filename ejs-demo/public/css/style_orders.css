@@ -22,27 +22,26 @@ td {
 }
 
 table tr td:nth-child(1) {
-    width: 380px;
+    width: 100px
 }
 
 table tr td:nth-child(2) {
-    width: 200px;
+    width: 100px
 }
 
 table tr td:nth-child(3) {
-    width: 200px;
+    width: 100px
 }
 
 table tr td:nth-child(4) {
-    width: 250px;
+    width: 100px
 }
 
 table tr td:nth-child(5) {
-    width: 350px;
+    width: 100px
 }
 
 th {
-    height: 50px;
     background-color: lightgrey;
 }
 
@@ -51,7 +50,7 @@ table td:hover {
     color: black;
 }
 
-.customersOrder {
+.customersOrder2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border: 1px solid rgb(223, 222, 222);
     border-collapse: collapse;
@@ -66,4 +65,24 @@ table td:hover {
          padding: 15px;
 
     */
+}
+
+.customersOrder tr td:nth-child(1) {
+    width: 380px;
+}
+
+.customersOrder table tr td:nth-child(2) {
+    width: 200px;
+}
+
+.customersOrder table tr td:nth-child(3) {
+    width: 200px;
+}
+
+.customersOrder table tr td:nth-child(4) {
+    width: 200px;
+}
+
+.customersOrder table tr td:nth-child(5) {
+    width: 200px;
 }

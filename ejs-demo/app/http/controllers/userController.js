@@ -93,7 +93,7 @@ function userController() {
             // Save user on database and redirect 
             user.save().then((user) => {
                 // Login
-                return res.redirect('/')
+                return res.redirect('/login')
             }).catch(err => {
                 req.flash('error', 'Something went wrong')
                 return res.redirect('/register')

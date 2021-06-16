@@ -33,8 +33,12 @@ function initRoutes(app) {
 
     // 'auth' is a middleware is created to make sure only signed-in customers can access '/customer/order' page
     app.get('/client/order', orderController().index);
+    app.get('/client/order/:id', orderController().tracker);
+
+
     app.get('/admin/orders', ordersController().index);
     app.post('/admin/order/status', statusController().statusUpdate);
+
 
     app.get('/about', (req, res) => {
         res.render('about');

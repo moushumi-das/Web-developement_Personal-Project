@@ -194,7 +194,7 @@ form {
 }
 
 .item_name {
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -244,4 +244,29 @@ form {
     font-weight: bold;
     font-size: 17px;
     padding-top: 10px;
+}
+
+.aboutpara {
+    color: navy;
+    text-indent: 30px;
+    padding-left: 200px;
+    padding-right: 440px;
+    display: block;
+    font-family: verdana;
+    font-size: 120%;
+    text-align: left;
+    word-spacing: 5px;
+}
+
+.resto_name {
+    padding-left: 200px;
+    font-family: verdana;
+    font-size: 220%;
+    color: brown;
+}
+
+.welcome_page {
+    padding-left: 200px;
+    font-family: verdana;
+    font-size: 220%;
 }
