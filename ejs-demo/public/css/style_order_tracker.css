@@ -100,7 +100,7 @@ body {
     left: -90px;
     top: 50%;
     border-style: none;
-    color: gray;
+    color: inherit;
     transform: translateY(-50%);
 }
 
@@ -157,6 +157,34 @@ body {
     margin-top: 10px;
 }
 
+
+/* styling line*/
+
 .status-box ul li.step-completed::before {
-    background: grey;
+    background: lightgray;
+}
+
+
+/* styling dots */
+
+.status-box ul li.step-completed span::after {
+    border-color: lightgray;
+}
+
+
+/* text */
+
+.status-box ul li.step-completed span {
+    color: lightgray;
+}
+
+
+/* Current status */
+
+.status-box ul li.current span {
+    color: green;
+}
+
+.status-box ul li.current span::after {
+    border-color: green;
 }

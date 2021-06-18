@@ -23560,8 +23560,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function initAdmin() {
-  var tbody = document.querySelector('#tbody');
-  console.log(tbody);
+  var tbody = document.querySelector('#tbody'); //console.log(tbody)
+
   var orders = [];
   var markup;
   axios__WEBPACK_IMPORTED_MODULE_0___default().get('/admin/orders', {
@@ -23571,8 +23571,8 @@ function initAdmin() {
   }).then(function (res) {
     orders = res.data;
     console.log(orders);
-    markup = generateMarkup(orders);
-    console.log(markup);
+    markup = generateMarkup(orders); //console.log(markup)
+
     tbody.innerHTML = "Hi Its working now"; //orderTableBody.innerHtml = markup
   })["catch"](function (err) {
     console.log(err);

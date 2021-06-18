@@ -108,9 +108,9 @@
 
                 function renderItems(items) {
                     let parsedItems = Object.values(items)
-                    console.log(parsedItems)
+                        //console.log(parsedItems)
                     return parsedItems.map((orderedItem) => {
-                        console.log(orderedItem.item.name)
+                        //console.log(orderedItem.item.name)
 
                         return `
                               <p>${ orderedItem.item.name } - ${ orderedItem.qty } pcs </p>
@@ -119,7 +119,7 @@
                 }
             }
             markup = generateMarkup(orders)
-            console.log(markup)
+                //console.log(markup)
                 //console.log(response.data);
             tbody.innerHTML = markup
                 //tbody.innerHTML = response.data[0].address + "   " + response.data[0].phone + " " + " " + response.data[0].userId.username
@@ -127,7 +127,7 @@
         })
         .catch(function(error) {
             // handle error
-            console.log(error);
+            //console.log(error);
         })
         .then(function() {
             // always executed

@@ -1,11 +1,22 @@
                                                 body {
                                                     margin: 0;
+                                                    background: rgb(35, 35, 36);
+                                                    color: blanchedalmond;
+                                                }
+                                                
+                                                .nav_link_wrapper a:hover {
+                                                    color: orangered;
+                                                }
+                                                
+                                                .nav_link_wrapper:hover {
+                                                    border-bottom: 1px solid rgb(238, 211, 211)
                                                 }
                                                 
                                                 .cart {
                                                     margin-top: 20px;
                                                     margin-bottom: 20px;
                                                     font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                                    background: beige;
                                                 }
                                                 /*..............................Styling empty cart ....................*/
                                                 

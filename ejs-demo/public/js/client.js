@@ -1852,8 +1852,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function initAdmin() {
-  var tbody = document.querySelector('#tbody');
-  console.log(tbody);
+  var tbody = document.querySelector('#tbody'); //console.log(tbody)
+
   var orders = [];
   var markup;
   axios__WEBPACK_IMPORTED_MODULE_0___default().get('/admin/orders', {
@@ -1863,8 +1863,8 @@ function initAdmin() {
   }).then(function (res) {
     orders = res.data;
     console.log(orders);
-    markup = generateMarkup(orders);
-    console.log(markup);
+    markup = generateMarkup(orders); //console.log(markup)
+
     tbody.innerHTML = "Hi Its working now"; //orderTableBody.innerHtml = markup
   })["catch"](function (err) {
     console.log(err);
@@ -23604,9 +23604,12 @@ var __webpack_exports__ = {};
   !*** ./resources/js/client.js ***!
   \********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
+
  //const initAdmin = require('./admin')
 
  //import Noty from 'noty'
@@ -23616,8 +23619,8 @@ var addToCart = document.querySelectorAll('.button2');
 var cartCouter = document.querySelector('#cartCouter');
 
 function updateCart(item) {
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', item).then(function (res) {
-    console.log(res.data.totalQty);
+  axios__WEBPACK_IMPORTED_MODULE_1___default().post('/update-cart', item).then(function (res) {
+    //console.log(res.data.totalQty)
     cartCouter.innerText = res.data.totalQty;
   });
 }
@@ -23629,7 +23632,38 @@ addToCart.forEach(function (btn) {
     updateCart(item);
   });
 });
-(0,_admin__WEBPACK_IMPORTED_MODULE_1__.initAdmin)();
+(0,_admin__WEBPACK_IMPORTED_MODULE_2__.initAdmin)(); // change order status
+
+var orderStatus = document.querySelectorAll('status_line');
+var order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null;
+order = JSON.parse(order);
+var time = document.createElement('small');
+console.log(order);
+
+function updateStatus(order) {
+  var stepCompleted = true; // status is local variable here
+
+  orderStatus.forEach(function (status) {
+    //
+    var datas = status.dataset.status;
+
+    if (stepCompleted) {
+      status.classList.add('step-completed');
+    }
+
+    if (datas === order.status) {
+      stepCompleted = false;
+      time.innerText = moment__WEBPACK_IMPORTED_MODULE_0___default()(order.updatedAt).format('hh:mm A');
+      status.appendChild(time);
+
+      if (status.nextElementSibling) {
+        status.nextElementSibling.classList.add('current');
+      }
+    }
+  });
+}
+
+updateStatus(order);
 })();
 
 /******/ })()

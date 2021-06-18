@@ -5,7 +5,7 @@ import moment from 'moment'
 
 export function initAdmin() {
     const tbody = document.querySelector('#tbody')
-    console.log(tbody)
+        //console.log(tbody)
     let orders = []
     let markup
     axios.get('/admin/orders', {
@@ -16,7 +16,7 @@ export function initAdmin() {
         orders = res.data
         console.log(orders)
         markup = generateMarkup(orders)
-        console.log(markup)
+            //console.log(markup)
         tbody.innerHTML = "Hi Its working now"
             //orderTableBody.innerHtml = markup
     }).catch(err => {

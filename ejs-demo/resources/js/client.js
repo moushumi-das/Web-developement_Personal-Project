@@ -10,7 +10,7 @@ let cartCouter = document.querySelector('#cartCouter')
 
 function updateCart(item) {
     axios.post('/update-cart', item).then(res => {
-        console.log(res.data.totalQty)
+        //console.log(res.data.totalQty)
         cartCouter.innerText = res.data.totalQty
 
     })
@@ -36,7 +36,9 @@ console.log(order)
 
 function updateStatus(order) {
     let stepCompleted = true;
+    // status is local variable here
     orderStatus.forEach((status) => {
+        //
         let datas = status.dataset.status
         if (stepCompleted) {
             status.classList.add('step-completed')

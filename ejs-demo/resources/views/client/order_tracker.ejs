@@ -25,3 +25,10 @@
 
     </div>
 </section>
+<script src="../../js/client.js"></script>
+<script>
+    let orderStatus = document.querySelectorAll('status_line')
+    let order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null
+    order = JSON.parse(order)
+    console.log(orderStatus)
+</script>
