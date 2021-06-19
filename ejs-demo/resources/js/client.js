@@ -1,5 +1,6 @@
 import moment from 'moment';
 import axios from 'axios'
+import { io } from 'socket.io-client'
 //const initAdmin = require('./admin')
 import { initAdmin } from './admin';
 //import Noty from 'noty'
@@ -33,7 +34,7 @@ let orderStatus = document.querySelectorAll('.status_line')
 let order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null
 order = JSON.parse(order)
 let time = document.createElement('small')
-console.log(orderStatus)
+    //console.log(orderStatus)
 
 function updateStatus(order) {
     let stepCompleted = true;
@@ -41,7 +42,7 @@ function updateStatus(order) {
     orderStatus.forEach((status) => {
         //
         let datas = status.dataset.status
-        console.log(datas)
+            //console.log(datas)
         if (stepCompleted) {
             status.classList.add('step-completed')
 
@@ -60,10 +61,21 @@ function updateStatus(order) {
 }
 updateStatus(order);
 
+//console.log(orderId)
+
 // socket connection
-var socket = io();
+let socket = io()
+    //socket.emit('join', 'welcome')
 
 if (order) {
     // socket join
     socket.emit('join', `order_${order._id}`)
+        //console.log(`order_${order._id}`)
 }
+
+socket.on('orderUpdated', (data) => {
+    const updatedOrder = {...order }
+    updatedOrder.updatedAt = moment().format()
+    updatedOrder.status = data.status
+    console.log(data)
+})

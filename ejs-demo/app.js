@@ -1,9 +1,14 @@
 require('dotenv').config()
+const http = require('http');
 const express = require('express');
 const app = express();
 const path = require('path');
 const expressLayout = require('express-ejs-layouts');
-//const PORT = process.env.PORT;
+const socketio = require('socket.io')
+const Emitter = require('events')
+    //const PORT = process.env.PORT;
+
+const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
 
 
@@ -36,6 +41,9 @@ let mongoStore = new MongoStore({
     collection: 'sessions'
 })
 
+// Event emitter
+const eventEmitter = new Emitter()
+app.set('eventEmitter', eventEmitter)
 
 // Session middleware configuration. We will store cart inside session
 // maxAge unit in ms so 24hr =  1000*60*60*24
@@ -89,13 +97,21 @@ require('./routes/web')(app);
 
 
 
-const server = app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 
 })
 
 
-const io = require('socket.io')(server)
+const io = socketio(server);
 io.on('connection', (socket) => {
-    console.log(socket.id)
+    //console.log(socket.id)
+    socket.on('join', (orderid) => {
+        console.log(orderid)
+        socket.join(orderid)
+
+    })
+})
+eventEmitter.on('orderUpdated', (data) => {
+    io.to(`order_${data.id}`).emit('orderUpdated', data)
 })
