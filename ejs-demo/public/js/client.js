@@ -1861,8 +1861,8 @@ function initAdmin() {
       "X-Requested-With": "XMLHttpRequest"
     }
   }).then(function (res) {
-    orders = res.data;
-    console.log(orders);
+    orders = res.data; //console.log(orders)
+
     markup = generateMarkup(orders); //console.log(markup)
 
     tbody.innerHTML = "Hi Its working now"; //orderTableBody.innerHtml = markup
@@ -1871,10 +1871,10 @@ function initAdmin() {
   });
 
   function renderItems(items) {
-    var parsedItems = Object.values(items);
-    console.log(parsedItems);
+    var parsedItems = Object.values(items); //console.log(parsedItems)
+
     return parsedItems.map(function (orderedItem) {
-      console.log(orderedItem.item.name);
+      //console.log(orderedItem.item.name)
       return "\n                <p>".concat(orderedItem.item.name, " - ").concat(orderedItem.qty, " pcs </p>\n            ");
     }).join('');
   }
@@ -23634,11 +23634,11 @@ addToCart.forEach(function (btn) {
 });
 (0,_admin__WEBPACK_IMPORTED_MODULE_2__.initAdmin)(); // change order status
 
-var orderStatus = document.querySelectorAll('status_line');
+var orderStatus = document.querySelectorAll('.status_line');
 var order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null;
 order = JSON.parse(order);
 var time = document.createElement('small');
-console.log(order);
+console.log(orderStatus);
 
 function updateStatus(order) {
   var stepCompleted = true; // status is local variable here
@@ -23646,6 +23646,7 @@ function updateStatus(order) {
   orderStatus.forEach(function (status) {
     //
     var datas = status.dataset.status;
+    console.log(datas);
 
     if (stepCompleted) {
       status.classList.add('step-completed');
@@ -23663,7 +23664,14 @@ function updateStatus(order) {
   });
 }
 
-updateStatus(order);
+updateStatus(order); // socket connection
+
+var socket = io();
+
+if (order) {
+  // socket join
+  socket.emit('join', "order_".concat(order._id));
+}
 })();
 
 /******/ })()

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { initAdmin } from './admin';
 //import Noty from 'noty'
 
+
 //'button2' class is added for 'Add' button which is used to add item in the cart
 let addToCart = document.querySelectorAll('.button2');
 let cartCouter = document.querySelector('#cartCouter')
@@ -28,11 +29,11 @@ addToCart.forEach((btn) => {
 initAdmin()
 
 // change order status
-let orderStatus = document.querySelectorAll('status_line')
+let orderStatus = document.querySelectorAll('.status_line')
 let order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null
 order = JSON.parse(order)
 let time = document.createElement('small')
-console.log(order)
+console.log(orderStatus)
 
 function updateStatus(order) {
     let stepCompleted = true;
@@ -40,6 +41,7 @@ function updateStatus(order) {
     orderStatus.forEach((status) => {
         //
         let datas = status.dataset.status
+        console.log(datas)
         if (stepCompleted) {
             status.classList.add('step-completed')
 
@@ -57,3 +59,11 @@ function updateStatus(order) {
 
 }
 updateStatus(order);
+
+// socket connection
+var socket = io();
+
+if (order) {
+    // socket join
+    socket.emit('join', `order_${order._id}`)
+}

@@ -64,6 +64,7 @@
                                                     padding-left: 400px;
                                                     background-color: bisque;
                                                     border-bottom: 3px solid #acafa7;
+                                                    color: black;
                                                 }
                                                 
                                                 .text_font {
@@ -76,6 +77,8 @@
                                                     display: flex;
                                                     align-items: center;
                                                     margin-top: 40px;
+                                                    color: black;
+                                                    font-size: smaller;
                                                 }
                                                 
                                                 .ordered_item img {
@@ -95,6 +98,11 @@
                                                     flex-grow: 1;
                                                     padding-left: 380px;
                                                     padding-right: 280px;
+                                                }
+                                                
+                                                .itemname {
+                                                    color: brown;
+                                                    font-size: 10px
                                                 }
                                                 /*..............................Styling total amount for ordered Items ....................*/
                                                 

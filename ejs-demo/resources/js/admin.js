@@ -14,7 +14,7 @@ export function initAdmin() {
         }
     }).then(res => {
         orders = res.data
-        console.log(orders)
+            //console.log(orders)
         markup = generateMarkup(orders)
             //console.log(markup)
         tbody.innerHTML = "Hi Its working now"
@@ -25,9 +25,9 @@ export function initAdmin() {
 
     function renderItems(items) {
         let parsedItems = Object.values(items)
-        console.log(parsedItems)
+            //console.log(parsedItems)
         return parsedItems.map((orderedItem) => {
-            console.log(orderedItem.item.name)
+            //console.log(orderedItem.item.name)
 
             return `
                 <p>${ orderedItem.item.name } - ${ orderedItem.qty } pcs </p>

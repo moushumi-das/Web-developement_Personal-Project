@@ -14,7 +14,9 @@ const MongoStore = require('connect-mongo')(session);
 const passport = require('passport')
 
 //Database connection  
+//const url = process.env.mongo_url;
 const url = 'mongodb://localhost:27017/onlinefood';
+
 
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
 const connection = mongoose.connection;
@@ -87,7 +89,13 @@ require('./routes/web')(app);
 
 
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 
+})
+
+
+const io = require('socket.io')(server)
+io.on('connection', (socket) => {
+    console.log(socket.id)
 })

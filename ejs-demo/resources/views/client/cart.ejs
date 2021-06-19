@@ -22,13 +22,15 @@
                         <div class="ordered_item">
                             <img class="image_ordered_item" src="images/<%= orderedItem.item.image %>" alt="" width="4%" height="1%">
                             <div class="image_ordered_item2">
-                                <h1>
+                                <h2>
                                     <%= orderedItem.item.name %>
-                                </h1>
-                                <span><%= orderedItem.item.size %></span><br>
-                                <span><%= orderedItem.qty %></span>
+                                        </h1>
+                                        <span class="itemname"><%= orderedItem.item.size %></span><br>
+                                        <span>Qty: <%= orderedItem.qty %></span>
                             </div>
+
                             <span class="ordereditem">$<%= orderedItem.item.price.toFixed(2) * orderedItem.qty %> </span>
+
                             <span class="ordereditem_price"></span>
 
                         </div>

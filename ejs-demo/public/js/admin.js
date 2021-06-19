@@ -23569,8 +23569,8 @@ function initAdmin() {
       "X-Requested-With": "XMLHttpRequest"
     }
   }).then(function (res) {
-    orders = res.data;
-    console.log(orders);
+    orders = res.data; //console.log(orders)
+
     markup = generateMarkup(orders); //console.log(markup)
 
     tbody.innerHTML = "Hi Its working now"; //orderTableBody.innerHtml = markup
@@ -23579,10 +23579,10 @@ function initAdmin() {
   });
 
   function renderItems(items) {
-    var parsedItems = Object.values(items);
-    console.log(parsedItems);
+    var parsedItems = Object.values(items); //console.log(parsedItems)
+
     return parsedItems.map(function (orderedItem) {
-      console.log(orderedItem.item.name);
+      //console.log(orderedItem.item.name)
       return "\n                <p>".concat(orderedItem.item.name, " - ").concat(orderedItem.qty, " pcs </p>\n            ");
     }).join('');
   }

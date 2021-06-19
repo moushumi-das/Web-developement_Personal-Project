@@ -12,7 +12,7 @@
             <ul>
                 <li class="status_line step-completed" data-status="order_placed"><span>Order Placed</span>
                 </li>
-                <li class="status_line current" data-status="confirmed"><span>Order confirmation</span>
+                <li class="status_line" data-status="confirmed"><span>Order confirmation</span>
                 </li>
                 <li class="status_line" data-status="prepared"><span>Preparation</span></li>
                 <li class="status_line" data-status="delivered"><span>Out for delivery </span>
@@ -26,9 +26,10 @@
     </div>
 </section>
 <script src="../../js/client.js"></script>
+
+<script src="https://unpkg.com/moment"></script>
 <script>
     let orderStatus = document.querySelectorAll('status_line')
     let order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null
     order = JSON.parse(order)
-    console.log(orderStatus)
 </script>
