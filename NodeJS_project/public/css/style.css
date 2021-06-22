@@ -9,6 +9,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr;
+    max-width: 90%;
 }
 
 .nav_wrapper {
@@ -269,4 +270,31 @@ form {
     padding-left: 200px;
     font-family: verdana;
     font-size: 220%;
+}
+
+
+/* On screens that are 992px or less, set the background color to blue */
+
+@media screen and (max-width: 892px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media(orientation:portrait) {
+    .nav_link_wrapper a {
+        color: blue;
+    }
+}
+
+@media(max-width: 692px) {
+    .nav_link_wrapper {
+        max-width: 90%;
+    }
+}
+
+@media(orientation:landscape) {
+    .nav_link_wrapper a {
+        color: rgb(247, 15, 92);
+    }
 }
