@@ -73,6 +73,7 @@ app.use(express.urlencoded({ extended: false }))
 // It parses incoming requests with JSON payloads
 app.use(express.json())
 
+
 //// Set static folder. This is for static routing
 //app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -115,4 +116,8 @@ io.on('connection', (socket) => {
 })
 eventEmitter.on('orderUpdated', (data) => {
     io.to(`order_${data.id}`).emit('orderUpdated', data)
+})
+
+eventEmitter.on('orderPlaced', (data) => {
+    io.to('adminChatRoom').emit('orderPlaced', data)
 })

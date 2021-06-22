@@ -26,7 +26,7 @@ addToCart.forEach((btn) => {
     })
 })
 
-initAdmin()
+
 
 // change order status
 let orderStatus = document.querySelectorAll('.status_line')
@@ -36,6 +36,10 @@ let time = document.createElement('small')
     //console.log(orderStatus)
 
 function updateStatus(order) {
+    orderStatus.forEach((status) => {
+        status.classList.remove('step-completed')
+        status.classList.remove('current')
+    })
     let stepCompleted = true;
     // status is local variable here
     orderStatus.forEach((status) => {
@@ -63,8 +67,9 @@ updateStatus(order);
 //console.log(orderId)
 
 // socket connection
-//let socket = io()
-//socket.emit('join', 'welcome')
+let socket = io()
+initAdmin(socket)
+    //socket.emit('join', 'welcome')
 
 if (order) {
     // socket join
@@ -72,11 +77,23 @@ if (order) {
 
 }
 
+let AdminPath = window.location.pathname
+console.log(AdminPath)
+if (AdminPath.includes()) {
+    socket.emit('join', 'adminChatRoom')
+}
+
 socket.on('orderUpdated', (data) => {
-    console.log('Hi')
+    console.log('Hi testing the socket io')
     const updatedOrder = {...order }
-    console.log('Hi')
     updatedOrder.updatedAt = moment().format()
     updatedOrder.status = data.status
-    console.log("Print data:" + " " + data)
+    updateStatus(updatedOrder)
+    console.log(data.status)
+    new Noty({
+        type: 'success',
+        timeout: 1000,
+        text: 'Order updated',
+        progressBar: false,
+    }).show();
 })
