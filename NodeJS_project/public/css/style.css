@@ -9,7 +9,6 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 90%;
 }
 
 .nav_wrapper {
@@ -275,7 +274,7 @@ form {
 
 /* On screens that are 992px or less, set the background color to blue */
 
-@media screen and (max-width: 892px) {
+@media screen and (max-width: 1060px) {
     .container {
         max-width: 90%;
     }
@@ -290,6 +289,7 @@ form {
 @media(max-width: 692px) {
     .nav_link_wrapper {
         max-width: 90%;
+        color: green;
     }
 }
 

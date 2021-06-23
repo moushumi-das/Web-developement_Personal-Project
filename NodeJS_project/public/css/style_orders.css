@@ -86,3 +86,31 @@ table td:hover {
 .customersOrder table tr td:nth-child(5) {
     width: 200px;
 }
+
+
+/* setting font family and font size for http://localhost:3000/client/order/ */
+
+.CS_OrderList {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+.CS_Orders {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.CS_phone {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.CS_Address {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.CS_Time {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}

@@ -6,10 +6,12 @@ const auth = require('../app/http/middlewares/Auth')
 const orderController = require('../app/http/controllers/client/orderController')
 const ordersController = require('../app/http/controllers/admin/ordersController')
 const statusController = require('../app/http/controllers/admin/statusController')
+const menuController = require('../app/http/controllers/client/menuController')
 
 function initRoutes(app) {
     // Home page
     app.get('/', indexController().index)
+
 
 
     // login page
@@ -44,9 +46,7 @@ function initRoutes(app) {
         res.render('about');
     });
 
-    app.get('/404', (req, res) => {
-        res.render('404');
-    });
+    app.get('/menu', menuController().index);
 
 }
 
