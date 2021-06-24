@@ -26779,7 +26779,19 @@ addToCart.forEach(function (btn) {
     var item = JSON.parse(btn.dataset.item);
     updateCart(item);
   });
-}); // change order status
+});
+var removeCartItemButton = document.getElementsByClassName('btn btn-danger');
+
+for (var i = 0; i < removeCartItemButton.length; i++) {
+  var button = removeCartItemButton[i];
+  button.addEventListener('click', removeCartItem);
+}
+
+function removeCartItem(event) {
+  var buttonClicked = event.target;
+  buttonClicked.parentElement.remove();
+} // change order status
+
 
 var orderStatus = document.querySelectorAll('.status_line');
 var order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null;

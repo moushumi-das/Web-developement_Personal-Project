@@ -13,7 +13,8 @@
         <% if(session.cart) { %>
             <div class="order_container">
                 <div class="order_container_item">
-                    <img class="image" src="images/shopping-cart.png" alt="">
+                    <img src="https://img.icons8.com/nolan/64/shopping-cart-promotion.png" />
+                    <!--<img class="image" src="images/shopping-cart.png" alt="">-->
                     <h1 class="text_font">Order summary</h1>
 
                 </div>
@@ -31,9 +32,9 @@
                                         <span>Qty: <%= orderedItem.qty %></span>
                             </div>
 
-                            <span class="ordereditem">$<%= orderedItem.item.price.toFixed(2) * orderedItem.qty %> </span>
-
-                            <span class="ordereditem_price"></span>
+                            <span class="ordereditem">$<%= orderedItem.item.price?.toFixed(2) * orderedItem.qty %> </span>
+                            <!-- <span class="ordereditem_price"></span>-->
+                            <button class="btn btn-danger" type="button">REMOVE</button>
 
                         </div>
                         <% } %>

@@ -26,6 +26,22 @@ addToCart.forEach((btn) => {
     })
 })
 
+let removeCartItemButton = document.getElementsByClassName('btn btn-danger')
+
+for (var i = 0; i < removeCartItemButton.length; i++) {
+    var button = removeCartItemButton[i]
+    button.addEventListener('click', removeCartItem)
+
+}
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.remove()
+
+}
+
+
+
 
 
 // change order status
