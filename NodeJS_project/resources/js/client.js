@@ -7,7 +7,8 @@ import Noty from 'noty'
 
 //'button2' class is added for 'Add' button which is used to add item in the cart
 let addToCart = document.querySelectorAll('.button2');
-let cartCouter = document.querySelector('#cartCouter')
+let orderButton = document.querySelectorAll('button');
+let cartCouter = document.querySelector('#cartCouter');
 
 function updateCart(item) {
     axios.post('/update-cart', item).then(res => {
@@ -17,25 +18,61 @@ function updateCart(item) {
     })
 }
 
-
 addToCart.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         // JSON. parse convert json string to object
         let item = JSON.parse(btn.dataset.item)
+            //console.log(item)
         updateCart(item)
     })
 })
 
-let removeCartItemButton = document.getElementsByClassName('btn btn-danger')
+// Edit cart logic
+function reduceCartItem(item) {
+    axios.post('/reduce-cart', item).then(res => {
+        //console.log(res.data.totalQty)
+        cartCouter.innerText = res.data.totalQty
+        let item = JSON.parse(btn.dataset.item)
+        updateCart(item)
+
+    })
+}
+
+
+let removeCartItemButton = document.querySelectorAll('.remove-item')
+
+
+/*removeCartItemButton.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        // JSON. parse convert json string to object
+        let item = JSON.parse(btn.dataset.itemToRemove)
+
+        //var buttonClicked = e.target;
+        //buttonClicked.parentElement.remove()
+        console.log(item);
+        //updateCart(item)
+    })
+})*/
 
 for (var i = 0; i < removeCartItemButton.length; i++) {
     var button = removeCartItemButton[i]
-    button.addEventListener('click', removeCartItem)
+    button.addEventListener('click', (event) => {
+
+        var buttonClicked = event.target;
+        console.log('Hello');
+        buttonClicked.parentElement.remove()
+        console.log('Hello')
+        let item = JSON.parse(button.dataset.itemToRemove);
+        console.log('Hello')
+
+        console.log(item);
+    })
 
 }
 
 function removeCartItem(event) {
-    var buttonClicked = event.target
+    var buttonClicked = event.target;
+
     buttonClicked.parentElement.remove()
 
 }

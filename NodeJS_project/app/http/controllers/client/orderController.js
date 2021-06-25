@@ -14,11 +14,12 @@ function orderController() {
             //console.log(req.body)
 
             const order = new Order({
-                userId: req.user._id,
-                items: req.session.cart.items,
-                phone: phone,
-                address: address
-            })
+                    userId: req.user._id,
+                    items: req.session.cart.items,
+                    phone: phone,
+                    address: address
+                })
+                // Saving order in database
             order.save().then(result => {
                 Order.populate(result, { path: 'userId' }, (err, success) => {
                     req.flash('success', 'Order placed successfully')
@@ -45,7 +46,7 @@ function orderController() {
                 //console.log(orders)
         },
         async tracker(req, res) {
-            // sorting the active ordes in descending order
+            // Filtering order by id
             const order = await Order.findById(req.params.id)
 
             // User authurization

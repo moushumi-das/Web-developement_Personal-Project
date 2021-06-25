@@ -4,7 +4,6 @@
 <head>
     <link rel="stylesheet" href="css/style_cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.css">
-
     <title>Document</title>
 </head>
 
@@ -34,7 +33,16 @@
 
                             <span class="ordereditem">$<%= orderedItem.item.price?.toFixed(2) * orderedItem.qty %> </span>
                             <!-- <span class="ordereditem_price"></span>-->
-                            <button class="btn btn-danger" type="button">REMOVE</button>
+                            <button data-itemToRemove="<%= JSON.stringify(orderedItem) %>" class="remove-item btn btn-danger" type="button">REMOVE</button>
+                            <div class="dropdown">
+                                <button class="dropbtn">Edit</button>
+                                <div class="dropdown-content">
+                                    <a href="/reduce-cart">Reduced by one</a>
+                                    <a href="#">Save for later</a>
+                                    <a href="#">Remove</a>
+                                </div>
+                            </div>
+
 
                         </div>
                         <% } %>
@@ -44,7 +52,7 @@
                 <div class="order-amount">
                     <div>
                         <span>Total Amount:</span>
-                        <span class="total-price">$<%= session.cart.totalPrice.toFixed(2) %></span>
+                        <span class="total-price">$<%= session.cart.totalPrice?.toFixed(2) %></span>
 
                     </div>
                     <!-- If user is loged in then allow them to complete the order-->
@@ -54,7 +62,7 @@
                                 <input name='phone' class="" type="text" placeholder="phone number">
                                 <input name='address' class="" type="text" placeholder="Address">
                                 <div>
-                                    <button class="button" type="submit"> Order Now</button>
+                                    <button class="button" type="submit"> Checkout</button>
                                 </div>
 
                             </form>

@@ -26764,6 +26764,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  //'button2' class is added for 'Add' button which is used to add item in the cart
 
 var addToCart = document.querySelectorAll('.button2');
+var orderButton = document.querySelectorAll('button');
 var cartCouter = document.querySelector('#cartCouter');
 
 function updateCart(item) {
@@ -26776,15 +26777,45 @@ function updateCart(item) {
 addToCart.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
     // JSON. parse convert json string to object
+    var item = JSON.parse(btn.dataset.item); //console.log(item)
+
+    updateCart(item);
+  });
+}); // Edit cart logic
+
+function reduceCartItem(item) {
+  axios__WEBPACK_IMPORTED_MODULE_1___default().post('/reduce-cart', item).then(function (res) {
+    //console.log(res.data.totalQty)
+    cartCouter.innerText = res.data.totalQty;
     var item = JSON.parse(btn.dataset.item);
     updateCart(item);
   });
-});
-var removeCartItemButton = document.getElementsByClassName('btn btn-danger');
+}
+
+var removeCartItemButton = document.querySelectorAll('.remove-item');
+/*removeCartItemButton.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        // JSON. parse convert json string to object
+        let item = JSON.parse(btn.dataset.itemToRemove)
+
+        //var buttonClicked = e.target;
+        //buttonClicked.parentElement.remove()
+        console.log(item);
+        //updateCart(item)
+    })
+})*/
 
 for (var i = 0; i < removeCartItemButton.length; i++) {
   var button = removeCartItemButton[i];
-  button.addEventListener('click', removeCartItem);
+  button.addEventListener('click', function (event) {
+    var buttonClicked = event.target;
+    console.log('Hello');
+    buttonClicked.parentElement.remove();
+    console.log('Hello');
+    var item = JSON.parse(button.dataset.itemToRemove);
+    console.log('Hello');
+    console.log(item);
+  });
 }
 
 function removeCartItem(event) {
