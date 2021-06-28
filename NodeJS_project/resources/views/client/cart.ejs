@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="css/style_cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.css">
+    <link rel="stylesheet" href="style_stripePayment.css">
     <title>Document</title>
 </head>
 
@@ -58,10 +59,18 @@
                     <!-- If user is loged in then allow them to complete the order-->
                     <% if(user) { %>
                         <div>
-                            <form class="form1" action="/order" method="POST">
+                            <form class="form1" action="/order" method="POST" id="srtipe_payment_form">
+
+
+                                <select name="payment-options" id="paymentMethod">
+                                  <option value="cod">Cash on delivery</option>
+                                  <option value="card">Card</option>
+
+                                </select>
                                 <input name='phone' class="" type="text" placeholder="phone number">
                                 <input name='address' class="" type="text" placeholder="Address">
                                 <div>
+                                    <div class="cartelement" id='card-element'></div>
                                     <button class="button" type="submit"> Checkout</button>
                                 </div>
 

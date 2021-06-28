@@ -29,7 +29,7 @@ function orderController() {
                     // Emit event
                     const eventEmitter = req.app.get('eventEmitter')
                     eventEmitter.emit('orderPlaced', success)
-
+                        //return res.json({ message: 'Order placed successfully' });
                     return res.redirect('/client/order')
                 })
 

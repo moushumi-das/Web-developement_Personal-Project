@@ -54,7 +54,13 @@ app.use(session({
     resave: false,
     store: mongoStore,
     saveUninitialized: false,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 }
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24
+            //SameSite = None // must be 'none' to enable cross-site delivery
+            //secure
+    }
+
+    //cookie: { maxAge: 1000 * 60 * 60 * 24 }
 }))
 
 // passport config

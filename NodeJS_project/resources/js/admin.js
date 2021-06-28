@@ -22,7 +22,7 @@ export function initAdmin(socket) {
         tbody.innerHTML = markup
 
     }).catch(err => {
-        console.log(err)
+        //console.log(err)
     })
 
     function renderItems(items) {
@@ -89,15 +89,16 @@ export function initAdmin(socket) {
 
     }
     socket.on('orderPlaced', (order) => {
+        orders.unshift(order)
+        tbody.innerHTML = ''
+        tbody.innerHTML = generateMarkup(orders)
         new Noty({
             type: 'success',
             timeout: 1000,
             text: 'New order!',
             progressBar: false,
         }).show();
-        orders.unshift(order)
-        tbody.innerHTML = ''
-        tbody.innerHTML = generateMarkup(orders)
+
     })
 
 }

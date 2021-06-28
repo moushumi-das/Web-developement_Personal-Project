@@ -26704,8 +26704,7 @@ function initAdmin(socket) {
     markup = generateMarkup(orders); //console.log(markup)
 
     tbody.innerHTML = markup;
-  })["catch"](function (err) {
-    console.log(err);
+  })["catch"](function (err) {//console.log(err)
   });
 
   function renderItems(items) {
@@ -26722,15 +26721,15 @@ function initAdmin(socket) {
   }
 
   socket.on('orderPlaced', function (order) {
+    orders.unshift(order);
+    tbody.innerHTML = '';
+    tbody.innerHTML = generateMarkup(orders);
     new (noty__WEBPACK_IMPORTED_MODULE_2___default())({
       type: 'success',
       timeout: 1000,
       text: 'New order!',
       progressBar: false
     }).show();
-    orders.unshift(order);
-    tbody.innerHTML = '';
-    tbody.innerHTML = generateMarkup(orders);
   });
 }
 })();
