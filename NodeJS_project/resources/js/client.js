@@ -79,20 +79,22 @@ function removeCartItem(event) {
 let orderStatus = document.querySelectorAll('.status_line')
 let order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null
 order = JSON.parse(order)
+console.log('Printing order')
+console.log(order)
 let time = document.createElement('small')
     //console.log(orderStatus)
 
 function updateStatus(order) {
     orderStatus.forEach((status) => {
+        //console.log(status.classList)
         status.classList.remove('step-completed')
         status.classList.remove('current')
     })
     let stepCompleted = true;
     // status is local variable here
     orderStatus.forEach((status) => {
-        //
         let datas = status.dataset.status
-            //console.log(datas)
+        console.log(datas)
         if (stepCompleted) {
             status.classList.add('step-completed')
 
@@ -111,9 +113,8 @@ function updateStatus(order) {
 }
 updateStatus(order);
 // stripe
-let socket = io()
-initAdmin(socket)
 
+/*
 async function initStripe() {
     const stripe = await loadStripe('pk_test_51J6LHZKXBspD5h0ztZ4VCDD7TP310reDozCqDVaN5KFgujqOlV5FQO3ZYDS8vtgKaL9bJmAkxtq7yse4eqBBsEOk00yjsEAJCu');
     const elements = stripe.elements()
@@ -171,7 +172,7 @@ async function initStripe() {
                     progressBar: false,
                 }).show();*/
 
-                window.location.href = '/client/order';
+/* window.location.href = '/client/order';
 
             }).catch((err) => {
                 console.log(err)
@@ -181,18 +182,19 @@ async function initStripe() {
                         text: err.res.data.message,
                         progressBar: false,
                     }).show();*/
-            })
+/* })
             console.log(paymentFormObject);
         })
     }
-}
+}*/
 //console.log(orderId)
 
 // socket connection
 //let socket = io()
 //initAdmin(socket)
 //socket.emit('join', 'welcome')
-
+let socket = io()
+initAdmin(socket)
 if (order) {
     // socket join
     socket.emit('join', `order_${order._id}`)
@@ -201,17 +203,22 @@ if (order) {
 
 let AdminPath = window.location.pathname
 console.log(AdminPath)
-if (AdminPath.includes()) {
+
+if (AdminPath.includes('admin')) {
+    initAdmin(socket)
     socket.emit('join', 'adminChatRoom')
 }
 
 socket.on('orderUpdated', (data) => {
     console.log('Hi testing the socket io')
     const updatedOrder = {...order }
+    console.log(data)
+    console.log(updatedOrder)
     updatedOrder.updatedAt = moment().format()
     updatedOrder.status = data.status
     updateStatus(updatedOrder)
     console.log(data.status)
+    console.log(updatedOrder.status)
         /* new Noty({
              type: 'success',
              timeout: 1000,

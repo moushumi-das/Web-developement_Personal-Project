@@ -182,9 +182,9 @@ body {
 /* Current status */
 
 .status-box ul li.current span {
-    color: green;
+    color: rgb(6, 223, 6);
 }
 
 .status-box ul li.current span::after {
-    border-color: green;
+    border-color: rgb(6, 223, 6);
 }

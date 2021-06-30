@@ -111,7 +111,8 @@ server.listen(PORT, () => {
 })
 
 
-const io = socketio(server, { cors: { origin: "*" } });
+//const io = socketio(server, { cors: { origin: "*" } });
+const io = require('socket.io')(server)
 io.on('connection', (socket) => {
     console.log("socket connection successfull" + " " + socket.id)
     socket.on('join', (orderid) => {
