@@ -64,12 +64,12 @@ for (var i = 0; i < removeCartItemButton.length; i++) {
 
 }
 
-function removeCartItem(event) {
-    var buttonClicked = event.target;
+//function removeCartItem(event) {
+// var buttonClicked = event.target;
 
-    buttonClicked.parentElement.remove()
+//  buttonClicked.parentElement.remove()
 
-}
+//}
 
 
 

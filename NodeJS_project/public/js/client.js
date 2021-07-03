@@ -26953,12 +26953,11 @@ for (var i = 0; i < removeCartItemButton.length; i++) {
     console.log('Hello');
     console.log(item);
   });
-}
-
-function removeCartItem(event) {
-  var buttonClicked = event.target;
-  buttonClicked.parentElement.remove();
-} // change order status
+} //function removeCartItem(event) {
+// var buttonClicked = event.target;
+//  buttonClicked.parentElement.remove()
+//}
+// change order status
 
 
 var orderStatus = document.querySelectorAll('.status_line');
