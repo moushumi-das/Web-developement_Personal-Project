@@ -4,19 +4,12 @@
                                                     color: blanchedalmond;
                                                 }
                                                 
+                                                .nav_link_wrapper:hover {
+                                                    border-bottom: 1px solid rgb(238, 211, 211);
+                                                }
+                                                
                                                 .nav_link_wrapper a:hover {
                                                     color: orangered;
-                                                }
-                                                
-                                                .nav_link_wrapper:hover {
-                                                    border-bottom: 1px solid rgb(238, 211, 211)
-                                                }
-                                                
-                                                .cart {
-                                                    margin-top: 20px;
-                                                    margin-bottom: 20px;
-                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
-                                                    background: beige;
                                                 }
                                                 /*..............................Styling empty cart ....................*/
                                                 
@@ -53,10 +46,16 @@
                                                 }
                                                 /*..............................Styling Cart with ordered items ....................*/
                                                 
+                                                .cart {
+                                                    overflow: auto;
+                                                }
+                                                
                                                 .order_container {
                                                     margin: auto;
                                                     text-align: center;
-                                                    background-color: lightyellow;
+                                                    background-color: rgb(243, 215, 215);
+                                                    height: fit-content;
+                                                    overflow: auto;
                                                 }
                                                 
                                                 .order_container_item {
@@ -74,23 +73,29 @@
                                                 /*..............................Styling ordered Items ....................*/
                                                 
                                                 .ordered_item {
+                                                    position: relative;
                                                     display: flex;
                                                     align-items: center;
-                                                    margin-top: 40px;
+                                                    margin-top: 15px;
                                                     color: black;
                                                     font-size: smaller;
+                                                    background: cornsilk;
                                                 }
                                                 
                                                 .ordered_item img {
                                                     padding-left: 350px;
+                                                    height: 1%;
                                                 }
                                                 
                                                 .image_ordered_item2 {
                                                     padding-left: 30px;
+                                                    width: 250px;
+                                                    height: 100px;
                                                 }
                                                 
                                                 .image_ordered_item2 span {
                                                     font-size: small;
+                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
                                                 }
                                                 
                                                 .ordereditem {
@@ -101,15 +106,31 @@
                                                 }
                                                 
                                                 .itemname {
+                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
                                                     color: brown;
                                                     font-size: 10px;
                                                 }
                                                 /*..............................Styling total amount for ordered Items ....................*/
                                                 
+                                                .myDiv {
+                                                    color: black;
+                                                    display: inline-block;
+                                                    width: 150px;
+                                                    vertical-align: middle;
+                                                    margin-left: 10rem;
+                                                    margin-top: 50px;
+                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                                }
+                                                
+                                                .sizeDiv {
+                                                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                                }
+                                                
                                                 .order-amount {
                                                     text-align: right;
                                                     padding-right: 400px;
                                                     color: black;
+                                                    overflow: auto;
                                                 }
                                                 
                                                 .total-price {
@@ -120,12 +141,13 @@
                                                 }
                                                 /*..............................Styling Remove button ....................*/
                                                 
-                                                .btn {
+                                                .remove-item {
                                                     background-color: #575af8;
                                                     color: #FFFFFF;
                                                     border-radius: 4px;
-                                                    margin-right: 150px;
                                                     padding: 6px;
+                                                    margin-left: 200px;
+                                                    margin-top: 20px;
                                                     font-size: small;
                                                 }
                                                 /*..............................Styling Input element ....................*/
@@ -188,6 +210,10 @@
                                                     font-weight: bold;
                                                 }
                                                 /* Styling Edit button  */
+                                                
+                                                .delete-item {
+                                                    margin-top: 10px;
+                                                }
                                                 
                                                 .dropbtn {
                                                     background-color: #04AA6D;

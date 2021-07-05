@@ -2033,12 +2033,6 @@ function initAdmin(socket) {
     orders.unshift(order);
     tbody.innerHTML = '';
     tbody.innerHTML = generateMarkup(orders);
-    new (noty__WEBPACK_IMPORTED_MODULE_2___default())({
-      type: 'success',
-      timeout: 1000,
-      text: 'New order!',
-      progressBar: false
-    }).show();
   });
 }
 
@@ -26912,6 +26906,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var addToCart = document.querySelectorAll('.button2');
 var orderButton = document.querySelectorAll('button');
 var cartCouter = document.querySelector('#cartCouter');
+var deleteCartItem = document.querySelectorAll('.delete-item'); //remove button
+
+var addItem = document.querySelectorAll('.add-item');
+var removeCartItem = document.querySelectorAll('.remove-item');
+var updatedprice = document.querySelector('#updated-price');
 
 function updateCart(item) {
   axios__WEBPACK_IMPORTED_MODULE_1___default().post('/update-cart', item).then(function (res) {
@@ -26927,45 +26926,70 @@ addToCart.forEach(function (btn) {
 
     updateCart(item);
   });
-}); // Edit cart logic
-
+});
+/*
+// Edit cart logic
 function reduceCartItem(item) {
-  axios__WEBPACK_IMPORTED_MODULE_1___default().post('/reduce-cart', item).then(function (res) {
-    //console.log(res.data.totalQty)
-    cartCouter.innerText = res.data.totalQty;
-    var item = JSON.parse(btn.dataset.item);
-    updateCart(item);
-    window.location.href = '/cart';
+    axios.post('/reduce-cart', item).then(res => {
+        //console.log(res.data.totalQty)
+        cartCouter.innerText = res.data.totalQty
+        let item = JSON.parse(btn.dataset.item)
+        updateCart(item)
+        window.location.href = '/cart';
+      })
+  }
+*/
+
+function editCart(itemToEdit, action) {
+  axios__WEBPACK_IMPORTED_MODULE_1___default().post('/edit-cart', {
+    item: itemToEdit.item,
+    action: action
+  }).then(function (res) {
+    console.log(res.data.totalQty);
+    console.log(res.data.totalPrice);
+    var cartItems = document.querySelectorAll('.ordered_item');
+    cartItems.forEach(function (cartItem) {
+      if (cartItem.classList.contains(itemToEdit.item._id)) {
+        if (res.data.qty <= 0) {
+          cartItem.remove();
+        } else {
+          cartItem.querySelector('#updatedqty').innerText = res.data.qty;
+          cartItem.querySelector('#current-item-price').innerText = res.data.itemPrice.toFixed(2);
+        }
+      }
+    });
+    cartCouter.innerText = res.data.totalQty > 0 ? res.data.totalQty : '';
+    updatedprice.innerText = res.data.totalPrice > 0 ? res.data.totalPrice.toFixed(2) : 0.00;
   });
-} //
+}
 
-
-var removeCartItemButton = document.querySelectorAll('.remove-item');
-
-for (var i = 0; i < removeCartItemButton.length; i++) {
-  var button = removeCartItemButton[i];
-  button.addEventListener('click', function (event) {
-    var buttonClicked = event.target;
-    console.log('Hello');
-    buttonClicked.parentElement.remove();
-    console.log('Hello');
-    var item = JSON.parse(button.dataset.itemToRemove);
-    console.log('Hello');
-    console.log(item);
+addItem.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    // JSON. parse convert json string to object
+    var item = JSON.parse(btn.dataset.additem);
+    editCart(item, 'increase');
   });
-} //function removeCartItem(event) {
-// var buttonClicked = event.target;
-//  buttonClicked.parentElement.remove()
-//}
-// change order status
-
+});
+deleteCartItem.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    var deleteitem = JSON.parse(btn.dataset.deleteitem);
+    editCart(deleteitem, 'decrease');
+  });
+});
+removeCartItem.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    // JSON. parse convert json string to object
+    var item = JSON.parse(btn.dataset.removeitem);
+    editCart(item, 'remove');
+  });
+}); // change order status
 
 var orderStatus = document.querySelectorAll('.status_line');
 var order = document.querySelector('#hiddeninput') ? document.querySelector('#hiddeninput').value : null;
 order = JSON.parse(order);
 console.log('Printing order');
 console.log(order);
-var time = document.createElement('small'); //console.log(orderStatus)
+var time = document.createElement('small');
 
 function updateStatus(order) {
   orderStatus.forEach(function (status) {

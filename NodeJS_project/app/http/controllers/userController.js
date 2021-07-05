@@ -89,6 +89,7 @@
                  password: hashedPassword
 
              })
+             console.log(user)
 
              // Save user on database and redirect 
              user.save().then((user) => {

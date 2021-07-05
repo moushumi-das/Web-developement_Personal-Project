@@ -92,12 +92,6 @@ export function initAdmin(socket) {
         orders.unshift(order)
         tbody.innerHTML = ''
         tbody.innerHTML = generateMarkup(orders)
-        new Noty({
-            type: 'success',
-            timeout: 1000,
-            text: 'New order!',
-            progressBar: false,
-        }).show();
 
     })
 

@@ -35,7 +35,7 @@
                 <% if (user) { %>
                     <div class="nav_link_wrapper">
                         <form id='logout' action="/logout" method="POST">
-                            <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                            <a onclick="document.getElementById('logout').submit()" href="#">zsLogout</a>
                         </form>
 
                     </div>
@@ -47,11 +47,14 @@
                             <div class="nav_link_wrapper">
                                 <div class="inline_block">
                                     <a href="/cart" class="test_block">
-                                        <span id="cartCouter" class="total-addtoCart-item"><%= session.cart ? session.cart.totalQty: '' %></span>
+                                        <span id="cartCouter" class="total-addtoCart-item"><%= session.cart && session.cart.totalQty > 0? session.cart.totalQty: '' %></span>
                                         <img src="/images/cart.png" alt="cart" width="45" height="35"></a>
                                 </div>
 
                             </div>
+
+
+
             </div>
 
         </div>

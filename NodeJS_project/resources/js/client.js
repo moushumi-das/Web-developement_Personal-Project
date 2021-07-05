@@ -12,6 +12,11 @@ let addToCart = document.querySelectorAll('.button2');
 let orderButton = document.querySelectorAll('button');
 let cartCouter = document.querySelector('#cartCouter');
 
+let deleteCartItem = document.querySelectorAll('.delete-item'); //remove button
+let addItem = document.querySelectorAll('.add-item');
+let removeCartItem = document.querySelectorAll('.remove-item');
+let updatedprice = document.querySelector('#updated-price');
+
 function updateCart(item) {
     axios.post('/update-cart', item).then(res => {
         //console.log(res.data.totalQty)
@@ -21,59 +26,84 @@ function updateCart(item) {
 }
 
 addToCart.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            // JSON. parse convert json string to object
+            let item = JSON.parse(btn.dataset.item)
+                //console.log(item)
+            updateCart(item)
+        })
+    })
+    /*
+    // Edit cart logic
+    function reduceCartItem(item) {
+        axios.post('/reduce-cart', item).then(res => {
+            //console.log(res.data.totalQty)
+            cartCouter.innerText = res.data.totalQty
+            let item = JSON.parse(btn.dataset.item)
+            updateCart(item)
+            window.location.href = '/cart';
+
+        })
+
+    }
+    */
+
+
+
+
+
+
+function editCart(itemToEdit, action) {
+    axios.post('/edit-cart', { item: itemToEdit.item, action: action }).then(res => {
+
+        console.log(res.data.totalQty)
+        console.log(res.data.totalPrice)
+
+        let cartItems = document.querySelectorAll('.ordered_item');
+
+        cartItems.forEach(cartItem => {
+            if (cartItem.classList.contains(itemToEdit.item._id)) {
+                if (res.data.qty <= 0) {
+                    cartItem.remove();
+                } else {
+                    cartItem.querySelector('#updatedqty').innerText = res.data.qty;
+                    cartItem.querySelector('#current-item-price').innerText = res.data.itemPrice.toFixed(2);
+                }
+            }
+        });
+
+        cartCouter.innerText = res.data.totalQty > 0 ? res.data.totalQty : '';
+        updatedprice.innerText = res.data.totalPrice > 0 ? res.data.totalPrice.toFixed(2) : 0.00;
+
+    })
+}
+
+addItem.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         // JSON. parse convert json string to object
-        let item = JSON.parse(btn.dataset.item)
-            //console.log(item)
-        updateCart(item)
+        let item = JSON.parse(btn.dataset.additem)
+
+        editCart(item, 'increase')
+
+
     })
 })
 
-// Edit cart logic
-function reduceCartItem(item) {
-    axios.post('/reduce-cart', item).then(res => {
-        //console.log(res.data.totalQty)
-        cartCouter.innerText = res.data.totalQty
-        let item = JSON.parse(btn.dataset.item)
-        updateCart(item)
-        window.location.href = '/cart';
+deleteCartItem.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        let deleteitem = JSON.parse(btn.dataset.deleteitem)
+        editCart(deleteitem, 'decrease')
+
 
     })
-
-}
-//
-
-let removeCartItemButton = document.querySelectorAll('.remove-item')
-
-
-
-
-for (var i = 0; i < removeCartItemButton.length; i++) {
-    var button = removeCartItemButton[i]
-    button.addEventListener('click', (event) => {
-
-        var buttonClicked = event.target;
-        console.log('Hello');
-        buttonClicked.parentElement.remove()
-        console.log('Hello')
-        let item = JSON.parse(button.dataset.itemToRemove);
-        console.log('Hello')
-
-        console.log(item);
+})
+removeCartItem.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        // JSON. parse convert json string to object
+        let item = JSON.parse(btn.dataset.removeitem)
+        editCart(item, 'remove')
     })
-
-}
-
-//function removeCartItem(event) {
-// var buttonClicked = event.target;
-
-//  buttonClicked.parentElement.remove()
-
-//}
-
-
-
-
+})
 
 // change order status
 let orderStatus = document.querySelectorAll('.status_line')
@@ -82,7 +112,7 @@ order = JSON.parse(order)
 console.log('Printing order')
 console.log(order)
 let time = document.createElement('small')
-    //console.log(orderStatus)
+
 
 function updateStatus(order) {
     orderStatus.forEach((status) => {
@@ -112,6 +142,8 @@ function updateStatus(order) {
 
 }
 updateStatus(order);
+
+
 // stripe
 
 /*

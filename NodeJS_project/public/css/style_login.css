@@ -4,6 +4,7 @@ body {
     font-family: sans-serif;
     background-image: linear-gradient(to right, rgba(255, 170, 170, 0.4) 0 100%), url(/images/background_img.jpg);
     background-size: cover;
+    color: black;
 }
 
 .container {
@@ -38,12 +39,16 @@ body {
 .form .message {
     margin: 15px 0 0;
     color: aliceblue;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form .message a {
-    color: #4CAF50;
+    color: rgb(17, 17, 16);
     text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form .register-form {

@@ -30,8 +30,7 @@ function initRoutes(app) {
     // The cart page is inside a folder named clients
     app.get('/cart', cartController().index);
     app.post('/update-cart', cartController().update);
-    app.get('/reduce-cart', cartController().reduceByOne)
-        // auth middleware is used here to make sure only signed-in customer can complete an order
+    app.post('/edit-cart', cartController().edit); // auth middleware is used here to make sure only signed-in customer can complete an order
     app.post('/order', orderController().store);
 
     // 'auth' is a middleware is created to make sure only signed-in customers can access '/customer/order' page

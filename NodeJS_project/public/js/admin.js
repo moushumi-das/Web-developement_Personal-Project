@@ -26724,12 +26724,6 @@ function initAdmin(socket) {
     orders.unshift(order);
     tbody.innerHTML = '';
     tbody.innerHTML = generateMarkup(orders);
-    new (noty__WEBPACK_IMPORTED_MODULE_2___default())({
-      type: 'success',
-      timeout: 1000,
-      text: 'New order!',
-      progressBar: false
-    }).show();
   });
 }
 })();
