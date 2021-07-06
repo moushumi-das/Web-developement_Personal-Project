@@ -62,9 +62,9 @@
                     <!-- If user is loged in then allow them to complete the order-->
                     <% if(user) { %>
                         <div>
-                            <form class="form1" action="/order" method="POST" id="srtipe_payment_form">
+                            <form class="form1" action="/order" method="POST" id="payment-form">
 
-                                <select name="payment-options" id="paymentMethod">
+                                <select name="paymentType" id="paymentType">
                                     <option value="cod">Cash on delivery</option>
                                     <option value="card">Card</option>
   
@@ -72,7 +72,7 @@
                                 <input name='phone' class="" type="text" placeholder="phone number">
                                 <input name='address' class="" type="text" placeholder="Address">
                                 <div>
-                                    <div class="cartelement" id='card-element'>payment</div>
+                                    <div id="card-element"></div>
                                     <button class="button" type="submit"> Order Now</button>
                                 </div>
 

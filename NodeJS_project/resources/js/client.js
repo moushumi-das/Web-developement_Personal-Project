@@ -1,6 +1,6 @@
 import moment from 'moment';
 import axios from 'axios';
-import { loadStripe } from '@stripe/stripe-js';
+import { initStripe } from './stripe'
 //const initAdmin = require('./admin')
 import { initAdmin } from './admin';
 import Noty from 'noty'
@@ -143,83 +143,12 @@ function updateStatus(order) {
 }
 updateStatus(order);
 
-
-// stripe
-
-/*
-async function initStripe() {
-    const stripe = await loadStripe('pk_test_51J6LHZKXBspD5h0ztZ4VCDD7TP310reDozCqDVaN5KFgujqOlV5FQO3ZYDS8vtgKaL9bJmAkxtq7yse4eqBBsEOk00yjsEAJCu');
-    const elements = stripe.elements()
-    let style = {
-        base: {
-            color: '#303238',
-            fontSize: '16px',
-            fontFamily: '"Open Sans", sans-serif',
-            fontSmoothing: 'antialiased',
-            '::placeholder': {
-                color: '#CFD7DF',
-            },
-        },
-        invalid: {
-            color: '#e5424d',
-            ':focus': {
-                color: '#303238',
-            },
-        },
-    };
-    let card = elements.create('card', { style })
-    card.mount('#card-element')
-    const paymentMethod = document.querySelector('#paymentMethod')
-    paymentMethod.addEventListener('change', (event) => {
-        console.log(event)
-        if (event.target.value === 'card') {
+initStripe()
 
 
-        } else {
-
-        }
-    })
 
 
-    //Ajax
-    const srtipePayment = document.querySelector('#srtipe_payment_form');
-    if (srtipePayment) {
-        srtipePayment.addEventListener('submit', (e) => {
-            e.preventDefault();
-            console.log(e)
-                //The FormData interface provides a way to easily construct a set of key/value pairs representing form fields and their values,
-            let paymentFormData = new FormData(srtipePayment);
-            let paymentFormObject = {}
-            for (let [key, value] of paymentFormData.entries()) {
-                paymentFormObject[key] = value
 
-
-            }
-            axios.post('/order', paymentFormObject).then((res) => {
-                console.log(res.data);
-                /*new Noty({
-                    type: 'success',
-                    timeout: 1000,
-                    text: res.data.message,
-                    progressBar: false,
-                }).show();*/
-
-/* window.location.href = '/client/order';
-
-            }).catch((err) => {
-                console.log(err)
-                    /*new Noty({
-                        type: 'success',
-                        timeout: 1000,
-                        text: err.res.data.message,
-                        progressBar: false,
-                    }).show();*/
-/* })
-            console.log(paymentFormObject);
-        })
-    }
-}*/
-//console.log(orderId)
 
 // socket connection
 //let socket = io()
@@ -251,10 +180,5 @@ socket.on('orderUpdated', (data) => {
     updateStatus(updatedOrder)
     console.log(data.status)
     console.log(updatedOrder.status)
-        /* new Noty({
-             type: 'success',
-             timeout: 1000,
-             text: 'Order updated',
-             progressBar: false,
-         }).show();*/
+
 })
