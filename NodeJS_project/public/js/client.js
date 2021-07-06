@@ -27957,8 +27957,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  //const initAdmin = require('./admin')
 
 
- //import { CardWidget } from './CardWidget';
-//'button2' class is added for 'Add' button which is used to add item in the cart
+ //'button2' class is added for 'Add' button which is used to add item in the cart
 
 var addToCart = document.querySelectorAll('.button2');
 var orderButton = document.querySelectorAll('button');
@@ -27967,14 +27966,15 @@ var deleteCartItem = document.querySelectorAll('.delete-item'); //remove button
 
 var addItem = document.querySelectorAll('.add-item');
 var removeCartItem = document.querySelectorAll('.remove-item');
-var updatedprice = document.querySelector('#updated-price');
+var updatedprice = document.querySelector('#updated-price'); // Add items in  the cart
 
 function updateCart(item) {
   axios__WEBPACK_IMPORTED_MODULE_1___default().post('/update-cart', item).then(function (res) {
     //console.log(res.data.totalQty)
     cartCouter.innerText = res.data.totalQty;
   });
-}
+} //  addToCart Button logic for adding item to cart
+
 
 addToCart.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
@@ -27983,19 +27983,7 @@ addToCart.forEach(function (btn) {
 
     updateCart(item);
   });
-});
-/*
-// Edit cart logic
-function reduceCartItem(item) {
-    axios.post('/reduce-cart', item).then(res => {
-        //console.log(res.data.totalQty)
-        cartCouter.innerText = res.data.totalQty
-        let item = JSON.parse(btn.dataset.item)
-        updateCart(item)
-        window.location.href = '/cart';
-      })
-  }
-*/
+}); // Edit cart logic
 
 function editCart(itemToEdit, action) {
   axios__WEBPACK_IMPORTED_MODULE_1___default().post('/edit-cart', {
@@ -28018,7 +28006,8 @@ function editCart(itemToEdit, action) {
     cartCouter.innerText = res.data.totalQty > 0 ? res.data.totalQty : '';
     updatedprice.innerText = res.data.totalPrice > 0 ? res.data.totalPrice.toFixed(2) : 0.00;
   });
-}
+} // increase  items in cart
+
 
 addItem.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
@@ -28026,13 +28015,15 @@ addItem.forEach(function (btn) {
     var item = JSON.parse(btn.dataset.additem);
     editCart(item, 'increase');
   });
-});
+}); // decrease the item in cart
+
 deleteCartItem.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
     var deleteitem = JSON.parse(btn.dataset.deleteitem);
     editCart(deleteitem, 'decrease');
   });
-});
+}); // Remove items from cart
+
 removeCartItem.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
     // JSON. parse convert json string to object

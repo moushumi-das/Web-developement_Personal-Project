@@ -4,7 +4,7 @@ import { initStripe } from './stripe'
 //const initAdmin = require('./admin')
 import { initAdmin } from './admin';
 import Noty from 'noty'
-//import { CardWidget } from './CardWidget';
+
 
 
 //'button2' class is added for 'Add' button which is used to add item in the cart
@@ -17,6 +17,7 @@ let addItem = document.querySelectorAll('.add-item');
 let removeCartItem = document.querySelectorAll('.remove-item');
 let updatedprice = document.querySelector('#updated-price');
 
+// Add items in  the cart
 function updateCart(item) {
     axios.post('/update-cart', item).then(res => {
         //console.log(res.data.totalQty)
@@ -24,34 +25,17 @@ function updateCart(item) {
 
     })
 }
-
+//  addToCart Button logic for adding item to cart
 addToCart.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            // JSON. parse convert json string to object
-            let item = JSON.parse(btn.dataset.item)
-                //console.log(item)
-            updateCart(item)
-        })
+    btn.addEventListener('click', (e) => {
+        // JSON. parse convert json string to object
+        let item = JSON.parse(btn.dataset.item)
+            //console.log(item)
+        updateCart(item)
     })
-    /*
-    // Edit cart logic
-    function reduceCartItem(item) {
-        axios.post('/reduce-cart', item).then(res => {
-            //console.log(res.data.totalQty)
-            cartCouter.innerText = res.data.totalQty
-            let item = JSON.parse(btn.dataset.item)
-            updateCart(item)
-            window.location.href = '/cart';
+})
 
-        })
-
-    }
-    */
-
-
-
-
-
+// Edit cart logic
 
 function editCart(itemToEdit, action) {
     axios.post('/edit-cart', { item: itemToEdit.item, action: action }).then(res => {
@@ -77,7 +61,7 @@ function editCart(itemToEdit, action) {
 
     })
 }
-
+// increase  items in cart
 addItem.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         // JSON. parse convert json string to object
@@ -89,6 +73,7 @@ addItem.forEach((btn) => {
     })
 })
 
+// decrease the item in cart
 deleteCartItem.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         let deleteitem = JSON.parse(btn.dataset.deleteitem)
@@ -97,6 +82,8 @@ deleteCartItem.forEach((btn) => {
 
     })
 })
+
+// Remove items from cart
 removeCartItem.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         // JSON. parse convert json string to object
