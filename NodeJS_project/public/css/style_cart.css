@@ -178,6 +178,7 @@
                                                     font-size: 15px;
                                                     padding: 5px;
                                                     width: 100px;
+                                                    margin-top: 5px;
                                                 }
                                                 
                                                 .button:hover {
@@ -186,6 +187,7 @@
                                                     color: rgb(231, 17, 17);
                                                     font-size: 14px;
                                                     font-weight: bold;
+                                                    width: 120px;
                                                 }
                                                 
                                                 .button2 {

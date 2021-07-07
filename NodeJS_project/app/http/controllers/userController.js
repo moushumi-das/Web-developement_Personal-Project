@@ -10,7 +10,9 @@
   any other inbound requests or events. The async version uses a thread pool which does not block the main event loop. */
 
  function userController() {
-
+     const _getRedirectUrl = (req) => {
+         return req.user.role === 'admin' ? '/admin/orders' : '/'
+     }
      return {
          login(req, res) {
              res.render('login')
@@ -45,7 +47,8 @@
                      }
 
                      // If successfully logged in then redirect user to Home page
-                     return res.redirect('/')
+                     return res.redirect(_getRedirectUrl(req))
+
                  })
              })(req, res, next)
          },

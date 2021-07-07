@@ -100,7 +100,7 @@ console.log('Printing order')
 console.log(order)
 let time = document.createElement('small')
 
-
+// Logic for real-time order status update using socket.io
 function updateStatus(order) {
     orderStatus.forEach((status) => {
         //console.log(status.classList)
@@ -128,8 +128,10 @@ function updateStatus(order) {
     })
 
 }
+// Calling function for order status
 updateStatus(order);
 
+// Calling function for stripe payment
 initStripe()
 
 

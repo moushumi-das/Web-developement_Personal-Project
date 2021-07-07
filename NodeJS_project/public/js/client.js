@@ -28037,7 +28037,7 @@ var order = document.querySelector('#hiddeninput') ? document.querySelector('#hi
 order = JSON.parse(order);
 console.log('Printing order');
 console.log(order);
-var time = document.createElement('small');
+var time = document.createElement('small'); // Logic for real-time order status update using socket.io
 
 function updateStatus(order) {
   orderStatus.forEach(function (status) {
@@ -28065,9 +28065,11 @@ function updateStatus(order) {
       }
     }
   });
-}
+} // Calling function for order status
 
-updateStatus(order);
+
+updateStatus(order); // Calling function for stripe payment
+
 (0,_stripe__WEBPACK_IMPORTED_MODULE_2__.initStripe)(); // socket connection
 //let socket = io()
 //initAdmin(socket)
