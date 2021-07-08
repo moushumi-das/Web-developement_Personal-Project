@@ -7,6 +7,12 @@ body {
     color: black;
 }
 
+.nav_link_wrapper a {
+    color: #1a1818;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
 .container {
     width: 360px;
     padding: 20px;

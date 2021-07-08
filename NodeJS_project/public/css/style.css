@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 
@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 35px;
+    width: 90%;
 }
 
 .right_side {
@@ -61,6 +62,7 @@ form {
     justify-content: space-between;
     background-color: rgb(137, 223, 223);
     height: 700px;
+    width: 95%;
 }
 
 .right {
@@ -80,6 +82,10 @@ form {
 .text_style2 {
     font-weight: bold;
     font-size: 65px;
+}
+
+.content_wrapper {
+    width: 90%;
 }
 
 
@@ -256,19 +262,6 @@ form {
     font-size: 120%;
     text-align: left;
     word-spacing: 5px;
-}
-
-.resto_name {
-    padding-left: 200px;
-    font-family: verdana;
-    font-size: 220%;
-    color: brown;
-}
-
-.welcome_page {
-    padding-left: 200px;
-    font-family: verdana;
-    font-size: 220%;
 }
 
 

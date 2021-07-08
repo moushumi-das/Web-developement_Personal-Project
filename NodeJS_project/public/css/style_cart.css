@@ -90,7 +90,7 @@
                                                 .image_ordered_item2 {
                                                     padding-left: 30px;
                                                     width: 250px;
-                                                    height: 100px;
+                                                    height: 108px;
                                                 }
                                                 
                                                 .image_ordered_item2 span {
@@ -117,8 +117,7 @@
                                                     display: inline-block;
                                                     width: 150px;
                                                     vertical-align: middle;
-                                                    margin-left: 10rem;
-                                                    margin-top: 50px;
+                                                    margin-top: 40px;
                                                     font-family: Verdana, Geneva, Tahoma, sans-serif;
                                                 }
                                                 
@@ -134,7 +133,7 @@
                                                 }
                                                 
                                                 .total-price {
-                                                    font-weight: bold;
+                                                    font-weight: 700;
                                                     font-size: large;
                                                     font-family: Verdana, Geneva, Tahoma, sans-serif;
                                                     color: orangered;
@@ -146,9 +145,17 @@
                                                     color: #FFFFFF;
                                                     border-radius: 4px;
                                                     padding: 6px;
-                                                    margin-left: 200px;
+                                                    margin-left: 100px;
                                                     margin-top: 20px;
-                                                    font-size: small;
+                                                    font-size: 12px;
+                                                }
+                                                
+                                                .remove-item:hover {
+                                                    background-color: #f4511e;
+                                                    border: none;
+                                                    color: #FFFFFF;
+                                                    text-align: center;
+                                                    width: 100px;
                                                 }
                                                 /*..............................Styling Input element ....................*/
                                                 
@@ -179,6 +186,7 @@
                                                     padding: 5px;
                                                     width: 100px;
                                                     margin-top: 5px;
+                                                    margin-bottom: 8px;
                                                 }
                                                 
                                                 .button:hover {
