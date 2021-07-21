@@ -141,6 +141,11 @@
                                                 /*..............................Styling Remove button ....................*/
                                                 
                                                 .remove-item {
+                                                    margin-left: 100px;
+                                                    margin-top: 20px;
+                                                    font-size: 12px;
+                                                }
+                                                /* .remove-item {
                                                     background-color: #575af8;
                                                     color: #FFFFFF;
                                                     border-radius: 4px;
@@ -150,12 +155,19 @@
                                                     font-size: 12px;
                                                 }
                                                 
+                                                
                                                 .remove-item:hover {
                                                     background-color: #f4511e;
                                                     border: none;
                                                     color: #FFFFFF;
                                                     text-align: center;
                                                     width: 100px;
+                                                }*/
+                                                
+                                                .remove-item:hover {
+                                                    border: none;
+                                                    color: #a89c9c;
+                                                    text-align: center;
                                                 }
                                                 /*..............................Styling Input element ....................*/
                                                 

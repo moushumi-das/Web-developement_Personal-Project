@@ -8,11 +8,11 @@ Real time food ordering web application using Html,CSS NodeJs, Express and Mongo
     Features: 
     1. Login system
     2. Registration 
-    3. User roles 
+    3. User roles(Admin and Customer)
     4. Fully functional Shopping cart 
     5. Realtime food status tracker 
         - Using Real time web socket private connections
-    6. Payment system using stipe(If time allow)
+    6. Payment system using stipe
 
 
     Pages:

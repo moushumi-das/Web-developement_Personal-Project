@@ -5,19 +5,21 @@
 </head>
 
 <div class='container'>
-    <div class="form" id="addForm">
+    <div class='inner-container'>
+        <div class="form" id="addForm">
 
-        <form action='/register' class="login-form" id='regForm' style="display: block;" method="POST">
-            <% if(messages.error) { %>
-                <span class=warning><%= messages.error %></span>
-                <% } %>
-                    <input type="text" id="username" name="username" value="<%= messages.username %>" placeholder="username" size="30" maxlength="12"><br><br>
-                    <input type="text" name="email" value="<%= messages.email %>" placeholder="email" size="30" maxlength="30"><br><br>
-                    <input type="password" name="password" placeholder="password" size="30" maxlength="10"><br><br>
+            <form action='/register' class="login-form" id='regForm' style="display: block;" method="POST">
+                <% if(messages.error) { %>
+                    <span class=warning><%= messages.error %></span>
+                    <% } %>
+                        <input type="text" id="username" name="username" value="<%= messages.username %>" placeholder="username" size="30" maxlength="12"><br><br>
+                        <input type="text" name="email" value="<%= messages.email %>" placeholder="email" size="30" maxlength="30"><br><br>
+                        <input type="password" name="password" placeholder="password" size="30" maxlength="10"><br><br>
 
-                    <button class="btn btn-secondary btn-block" id="button" type="submit"> Click here</button>
-                    <div class="text-muted mb-2"></div>
-                    <p class="message" id="go-to-login">Already Registered? <a href="/login"> Login </a></p>
-        </form>
+                        <button class="btn btn-secondary btn-block" id="button" type="submit"> Click here</button>
+                        <div class="text-muted mb-2"></div>
+                        <p class="message" id="go-to-login">Already Registered? <a href="/login"> Login </a></p>
+            </form>
+        </div>
     </div>
 </div>

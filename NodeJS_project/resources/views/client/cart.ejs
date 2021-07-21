@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style_stripePayment.css">
     <title>Document</title>
 </head>
@@ -46,8 +48,12 @@
                                 Item Total = $<span id="current-item-price" class="<%= orderedItem.item._id %>"><%= (orderedItem.item.price * orderedItem.qty).toFixed(2) %> </span>
                             </div>
                             <div>
-                                <button data-removeitem="<%= JSON.stringify(orderedItem) %>" class="remove-item" type="button">REMOVE ITEM</button>
+                                <button data-removeitem="<%= JSON.stringify(orderedItem) %>" class="remove-item" type="button"><i class="fa fa-trash-alt" aria-hidden="true"></i></button>
                             </div>
+                            <div>
+
+                            </div>
+
                         </div>
                         <% } %>
 
