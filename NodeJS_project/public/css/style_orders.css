@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+:root {
+    --dark: #2b2d42;
+    --light: #adb5bd;
+    --border: #dee2e6;
+    --border-btn: #edf2f4;
+}
+
 body {
     margin: 0;
     background: cornsilk;
@@ -13,7 +21,7 @@ th,
 td {
     border: 1px solid gray;
     text-align: center;
-    margin-left: 70px;
+    margin-left: 140px;
 }
 
 td {
@@ -50,25 +58,8 @@ table td:hover {
     color: black;
 }
 
-.customersOrder2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: 1px solid rgb(223, 222, 222);
-    border-collapse: collapse;
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 210px;
-    width: 1200px;
-    height: 900px;
-    color: black;
-    /*//pointer-events: none;
-     position: absolute;
-         padding: 15px;
-
-    */
-}
-
 .customersOrder tr td:nth-child(1) {
-    width: 380px;
+    width: 250px;
 }
 
 .customersOrder table tr td:nth-child(2) {
@@ -87,30 +78,127 @@ table td:hover {
     width: 200px;
 }
 
+.customersOrder .thead-dark th {
+    color: #fff;
+    background-color: #2b2d42;
+    border-color: #32383e;
+}
+
 
 /* setting font family and font size for http://localhost:3000/client/order/ */
 
 .CS_OrderList {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
     font-size: 15px;
 }
 
 .CS_Orders {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
     font-size: 16px;
 }
 
 .CS_phone {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
     font-size: 16px;
 }
 
 .CS_Address {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
     font-size: 16px;
 }
 
 .CS_Time {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
     font-size: 16px;
+}
+
+table {
+    border-spacing: 0px;
+    width: 75%;
+}
+
+.customersOrder td,
+.customersOrder th {
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.customersOrder td>a.btn {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
+
+.customersOrder tr:hover {
+    background-color: #06d6a0;
+}
+
+.customersOrder tr:hover td>a {
+    box-shadow: none;
+}
+
+.customersOrder .thead-dark th {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+
+
+/*Styling the admin order page*/
+
+.customersOrder2 {
+    font-family: 'PT Sans', sans-serif;
+    border: 1px solid rgb(223, 222, 222);
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 110px;
+    width: 1200px;
+    height: 700px;
+    color: black;
+    /*//pointer-events: none;
+     position: absolute;
+         padding: 15px;
+
+    */
+}
+
+.customersOrder2 .thead-dark th {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+
+.customersOrder2 tr:hover td>a {
+    box-shadow: none;
+}
+
+.customersOrder2 {
+    border-spacing: 0px;
+    width: 85%;
+}
+
+.customersOrder2 td,
+.customersOrder2 th {
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.customersOrder2 td>a.btn {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
+
+tr {
+    height: 70px;
 }
