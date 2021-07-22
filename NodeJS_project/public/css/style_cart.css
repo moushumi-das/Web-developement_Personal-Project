@@ -1,7 +1,11 @@
                                                 body {
                                                     margin: 0;
-                                                    background: rgb(35, 35, 36);
-                                                    color: blanchedalmond;
+                                                }
+                                                
+                                                .nav_link_wrapper a {
+                                                    color: #eb1111;
+                                                    text-decoration: none;
+                                                    transition: color 0.5s;
                                                 }
                                                 
                                                 .nav_link_wrapper:hover {

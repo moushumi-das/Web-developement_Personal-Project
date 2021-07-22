@@ -61,9 +61,11 @@ form {
 .container2 {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(137, 223, 223);
+    background-color: rgb(245, 209, 119);
     height: 700px;
-    width: 95%;
+    width: 88%;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 .right {
@@ -86,7 +88,7 @@ form {
 }
 
 .content_wrapper {
-    width: 90%;
+    width: 95%;
 }
 
 
@@ -100,7 +102,7 @@ form {
 
 .test_block {
     display: flex;
-    background-color: thistle;
+    background-color: rgb(238, 231, 238);
     text-align: center;
     font-weight: bold;
     border-radius: 25px;
@@ -148,8 +150,8 @@ form {
 .menu_items_wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 70px;
-    padding-top: 120px;
+    grid-gap: 50px 40px;
+    padding-top: 50px;
     margin-left: 40px;
 }
 
@@ -215,7 +217,7 @@ form {
     font-size: 18px;
     padding: 5px;
     width: 55px;
-    margin-left: 110px;
+    margin-left: 100px;
 }
 
 .button2 {
@@ -250,7 +252,7 @@ form {
 .item_price {
     font-weight: bold;
     font-size: 17px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .aboutpara {
@@ -289,6 +291,6 @@ form {
 
 @media(orientation:landscape) {
     .nav_link_wrapper a {
-        color: rgb(247, 15, 92);
+        color: rgb(56, 47, 50);
     }
 }

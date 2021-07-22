@@ -1,7 +1,13 @@
 body {
     background: rgb(48, 47, 47);
-    color: rgb(207, 205, 204);
+    color: whitesmoke;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav_link_wrapper a {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color 0.5s;
 }
 
 .status {
