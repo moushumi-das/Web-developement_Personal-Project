@@ -23,10 +23,17 @@ In this project, I have built a Real time food ordering web application where cu
        3.Payment integration with Stripe
        4.Track the order status in real time
        5.Browse categories and their MenuItems
-
-![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/Admin_dashboard.PNG)
-![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/Checkout_page.PNG)
-![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/Order_status.PNG)
+       
+  ### Home page:
 ![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/home_page.PNG)
+ ### Login page:
+![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/login_page.PNG)
+### Checkout page
+![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/Checkout_page.PNG)
+ ### Tracking order status in real-time
+![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/Order_status.PNG)
+ ### Menu
 ![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/menu_page.PNG)
+ ### Admin Dashboard
+![](https://github.com/moushumi-das/Web-developement_Personal-Project/blob/master/images/Admin_dashboard.PNG)
 
